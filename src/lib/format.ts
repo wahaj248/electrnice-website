@@ -1,7 +1,8 @@
 export function formatInr(amount: number): string {
-  return new Intl.NumberFormat("en-IN", {
+  // Kept function name for minimal refactor; now formats in USD.
+  return new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "INR",
+    currency: "USD",
     maximumFractionDigits: 0,
   }).format(amount);
 }
