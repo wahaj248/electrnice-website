@@ -163,3 +163,7 @@ export const catalogProducts = products;
 export function getProductById(id: string): Product | undefined {
   return products.find((p) => p.id === id);
 }
+
+export function resolveImageSrc(image: string | StaticImageData): string {
+  return typeof image === "string" ? image : image.src;
+}
