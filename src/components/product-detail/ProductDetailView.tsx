@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { AddToCartButton } from "@/components/AddToCartButton";
+import { CtaReadySection } from "@/components/CtaReadySection";
 import type { ProductDetailExtra } from "@/lib/product-detail-extras";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
@@ -388,6 +389,10 @@ export function ProductDetailView({
                 </article>
               ))}
             </div>
+          </div>
+
+          <div className="pt-2">
+            <CtaReadySection />
           </div>
         </div>
       </div>
