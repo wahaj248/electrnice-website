@@ -5,7 +5,12 @@ import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
-export function FloatingSelectionBar() {
+type FloatingSelectionBarProps = {
+  /** `hero` = bottom of hero section; `fixed` = viewport bottom (catalog pages) */
+  variant?: "hero" | "fixed";
+};
+
+export function FloatingSelectionBar({ variant = "hero" }: FloatingSelectionBarProps) {
   const { itemCount } = useCart();
   const [mounted, setMounted] = useState(false);
 
@@ -15,8 +20,13 @@ export function FloatingSelectionBar() {
 
   const displayCount = mounted ? itemCount : 0;
 
+  const positionClass =
+    variant === "fixed"
+      ? "pointer-events-none fixed bottom-6 left-0 right-0 z-40 flex justify-center px-4"
+      : "pointer-events-none absolute -bottom-8 left-0 right-0 z-[5] flex justify-center px-4";
+
   return (
-    <div className="pointer-events-none absolute -bottom-8 left-0 right-0 z-[5] flex justify-center px-4">
+    <div className={positionClass}>
       <div className="pointer-events-auto flex max-w-full overflow-hidden rounded-full bg-[#0f1f3d] shadow-lg ring-1 ring-black/10">
         <Link
           href="/cart"
