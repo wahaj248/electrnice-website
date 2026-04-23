@@ -1,0 +1,225 @@
+{
+  "nav": {
+    "home": "Home",
+    "tvs": "TVs",
+    "acs": "ACs",
+    "contactUs": "Contact Us",
+    "openSelectedProducts": "Open selected products",
+    "language": "Language"
+  },
+  "language": {
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "ctaReady": {
+    "title": "Ready to Choose Your Products?",
+    "description": "Select your items and contact us instantly via WhatsApp for personalized guidance and the best market offers.",
+    "contactWhatsapp": "Contact on WhatsApp",
+    "viewCatalog": "View Catalog"
+  },
+  "footer": {
+    "tagline": "Engineered for excellence. We bring the latest in display and climate control technology to your home.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "connect": "Connect",
+    "whatsappUs": "WhatsApp Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "cartDrawer": {
+    "title": "Selected Products",
+    "item": "item",
+    "items": "items",
+    "close": "Close",
+    "emptyTitle": "No items selected yet",
+    "emptyDesc": "Browse products and tap Select to add them here.",
+    "browseProducts": "Browse products",
+    "remove": "Remove",
+    "contactWhatsapp": "Contact on WhatsApp",
+    "orReview": "Or review on the full",
+    "cartPage": "cart page"
+  },
+  "selectionBar": {
+    "selection": "Selection",
+    "item": "Item",
+    "items": "Items"
+  },
+  "catalog": {
+    "breadcrumbProducts": "Products",
+    "heroTagline": "That Power Your Life",
+    "heroTitle": "Technological experiences",
+    "heroDescTvs": "Browse smart LED televisions with vivid picture, streaming apps, and sizes for every room.",
+    "heroDescAcs": "Browse inverter split air conditioners engineered for efficient cooling and quieter comfort.",
+    "productCategories": "Product categories",
+    "categoryAcs": "Air conditioners",
+    "categoryTvs": "Televisions",
+    "characteristics": "Characteristics",
+    "sortBy": "Sort by",
+    "sortNewer": "Newer arrivals",
+    "sortPriceAsc": "Price: Low to high",
+    "sortPriceDesc": "Price: High to low",
+    "searchPlaceholder": "Search products...",
+    "empty": "No products match your filters. Try clearing characteristics or adjusting search."
+  },
+  "cartPage": {
+    "emptyTitle": "Your cart is empty",
+    "emptyDesc": "Add items from a product page — navbar and footer stay the same here too.",
+    "browseProducts": "Browse products",
+    "qty": "Qty",
+    "remove": "Remove",
+    "clear": "Clear cart",
+    "summary": "Summary",
+    "item": "item",
+    "items": "items",
+    "subtotal": "Subtotal",
+    "checkoutDemo": "Checkout (demo)"
+  },
+  "productDetail": {
+    "description": "Product description",
+    "technicalSpecs": "Technical specifications",
+    "detailedSpecs": "Detailed specifications",
+    "related": "Related products",
+    "select": "Select",
+    "breadcrumbNav": "Breadcrumb",
+    "categoryEyebrowTv": "TELEVISIONS — SMART TV",
+    "categoryEyebrowAc": "CLIMATE — INVERTER AC",
+    "brandName": "HYUNDAI",
+    "brandLine": "Electronics",
+    "metaFallbackTitle": "Product"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "desc": "The page you’re looking for doesn’t exist or may have been moved.",
+    "goHome": "Go to Home",
+    "browseProducts": "Browse products"
+  },
+  "home": {
+    "categoryExperienceTagline": "That Power Your Life",
+    "categoryExperienceTitle": "Technological experiences",
+    "televisions": "Televisions",
+    "airConditioners": "Air Conditioners",
+    "seeMore": "See More",
+    "faqBannerTitle": "FAQs - Everything You Need To Know",
+    "readFaqs": "Read FAQ's",
+    "productCatalogTitle": "Product Catalog",
+    "allProducts": "All Products"
+  },
+  "heroSlider": {
+    "learnMore": "Learn more",
+    "prev": "Previous slide",
+    "next": "Next slide",
+    "goToSlide": "Go to slide {number}",
+    "slides": [
+      {
+        "title": "HYUNDAI 32\" Full HD SMART LED TV",
+        "subtitle": "A blazingly fast interface that lets you do what you want to do.",
+        "col1": ["3840x2160 Resolution", "Dolby Audio"],
+        "col2": ["Netflix/YouTube/HDR", "VIDAA SYSTEM"]
+      },
+      {
+        "title": "HYUNDAI Inverter Split AC",
+        "subtitle": "Quiet cooling, energy-efficient compressor, and clean air filters for every season.",
+        "col1": ["Fast cooling", "Low noise operation"],
+        "col2": ["R32 eco refrigerant", "Smart diagnostics"]
+      },
+      {
+        "title": "HYUNDAI QLED 4K Entertainment",
+        "subtitle": "Rich contrast, vivid color, and seamless streaming in one sleek frame.",
+        "col1": ["Quantum dot color", "HDR10+ support"],
+        "col2": ["Voice assistant ready", "Gaming mode"]
+      }
+    ]
+  },
+  "smartTv": {
+    "title": "Your HYUNDAI Smart TV with Google TV",
+    "desc": "Access your favorite apps, high-quality content, and voice control all in one place.",
+    "learnMore": "Learn more"
+  },
+  "aboutCards": {
+    "card1Title": "About Company",
+    "card2Title": "About Our Products",
+    "card3Title": "Catalog",
+    "learnMore": "Learn more"
+  },
+  "testimonials": {
+    "title": "Customer Experiences",
+    "quote1": "Great quality products and excellent service. The 4K TV has completely changed our movie nights. The installation was seamless.",
+    "quote2": "The Inverter AC is remarkably quiet. I was worried about my electricity bill, but the efficiency rating is exactly as advertised. Highly recommended.",
+    "quote3": "Best customer support I've ever experienced. They helped me pick the right tonnage for my office and followed up after installation.",
+    "name1": "Rodger Struck",
+    "name2": "Rhonda Rhodes",
+    "name3": "Kenneth Allen",
+    "role1": "Homeowner",
+    "role2": "Interior designer",
+    "role3": "Business owner"
+  },
+  "insights": {
+    "title": "Latest Insights & Guides",
+    "readMore": "Read More"
+  },
+  "aboutPage": {
+    "title": "About HYUNDAI Electronics",
+    "body": "We bring the latest in display and climate control technology to your home. This demo page is linked from the home “About Company” card.",
+    "backHome": "← Back to home"
+  },
+  "faqPage": {
+    "backHome": "← Back to home",
+    "title": "FAQs - Everything You Need To Know",
+    "subtitle": "Quick answers about choosing and caring for HYUNDAI electronics.",
+    "q1": "How do I pick the right TV size?",
+    "a1": "Measure the distance from your sofa to the wall, then use a viewing-distance chart. Our team can help you match size and resolution to your room.",
+    "q2": "What does inverter mean on an AC?",
+    "a2": "Inverter compressors adjust speed instead of switching on and off fully, which often saves energy and keeps temperatures steadier with less noise.",
+    "q3": "Do you offer installation?",
+    "a3": "Installation options depend on your region and retailer. Contact us on WhatsApp for guidance and local partner information."
+  },
+  "productsPage": {
+    "title": "Products",
+    "desc": "Click a card for full details and add-to-cart. Navbar and footer stay the same as on the home page."
+  },
+  "cartShell": {
+    "title": "Cart",
+    "desc": "Same top navigation and footer as Home and Products."
+  },
+  "guidePage": {
+    "backHome": "← Back to home"
+  },
+  "guides": {
+    "perfect-smart-tv": {
+      "category": "Buying Guide",
+      "title": "How to Choose the Perfect Smart TV for Your Living Room",
+      "description": "Learn about viewing distances, panel types, and feature sets that matter for your specific space.",
+      "body": "Start by measuring your seating distance, then match screen size and resolution. Compare smart platforms, HDR support, and connectivity before you buy."
+    },
+    "ac-efficiency": {
+      "category": "Maintenance",
+      "title": "Top 5 Tips to Keep Your Air Conditioner Running Efficiently",
+      "description": "Save on energy bills and extend the life of your AC with these simple professional maintenance steps.",
+      "body": "Clean or replace filters on schedule, keep outdoor units clear, set sensible temperatures, seal doors and windows, and book seasonal professional service."
+    },
+    "4k-vs-oled": {
+      "category": "Buying Guide",
+      "title": "Understanding 4K UHD vs. OLED: Which One is Right for You?",
+      "description": "Demystifying display technologies to help you choose the best image quality for your home.",
+      "body": "4K UHD refers to resolution; OLED is a panel technology known for deep blacks and contrast. Your room lighting and content habits should guide the final pick."
+    }
+  },
+  "addToCart": {
+    "default": "Add to cart"
+  },
+  "productDetailExtra": {
+    "sku": "SKU",
+    "inStock": "In Stock",
+    "viewImage": "View image {number}",
+    "decreaseQty": "Decrease quantity",
+    "increaseQty": "Increase quantity",
+    "select": "Select",
+    "contactWhatsapp": "Contact on WhatsApp",
+    "tabDescription": "Product description",
+    "tabManual": "User Manual",
+    "manualHeading": "User manual",
+    "manualCardTitle": "Product Manual & Documentation",
+    "manualCardDesc": "Download the full user manual for technical guidance and installation instructions."
+  }
+}
+

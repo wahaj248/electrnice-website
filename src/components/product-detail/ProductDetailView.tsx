@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { CtaReadySection } from "@/components/CtaReadySection";
 import type { ProductDetailExtra } from "@/lib/product-detail-extras";
@@ -40,6 +41,7 @@ export function ProductDetailView({
   extra: ProductDetailExtra;
   related: RelatedProductDTO[];
 }) {
+  const t = useTranslations();
   const [tab, setTab] = useState<TabKey>("description");
   const [thumb, setThumb] = useState(0);
   const [qty, setQty] = useState(1);
@@ -47,10 +49,10 @@ export function ProductDetailView({
   const mainSrc = product.gallerySrcs[thumb] ?? product.imageSrc;
 
   const categoryLine = useMemo(() => {
-    if (product.category === "TVs") return "TELEVISIONS — SMART TV";
-    if (product.category === "ACs") return "CLIMATE — INVERTER AC";
+    if (product.category === "TVs") return t("productDetail.categoryEyebrowTv");
+    if (product.category === "ACs") return t("productDetail.categoryEyebrowAc");
     return product.category.toUpperCase();
-  }, [product.category]);
+  }, [product.category, t]);
 
   const decQty = () => setQty((q) => Math.max(1, q - 1));
   const incQty = () => setQty((q) => Math.min(99, q + 1));
@@ -58,17 +60,20 @@ export function ProductDetailView({
   return (
     <div className="bg-white pb-16 pt-6 sm:pt-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <nav className="text-xs text-zinc-500 sm:text-sm" aria-label="Breadcrumb">
+        <nav
+          className="text-xs text-zinc-500 sm:text-sm"
+          aria-label={t("productDetail.breadcrumbNav")}
+        >
           <ol className="flex flex-wrap items-center gap-x-1 gap-y-1">
             <li>
               <Link href="/" className="hover:text-zinc-800">
-                Home
+                {t("nav.home")}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/products" className="hover:text-zinc-800">
-                Products
+                {t("catalog.breadcrumbProducts")}
               </Link>
             </li>
             <li aria-hidden>/</li>
@@ -97,7 +102,7 @@ export function ProductDetailView({
                   className={`relative aspect-[4/3] min-w-0 overflow-hidden rounded-lg bg-[#f3f4f6] ring-2 ring-offset-1 ring-offset-white transition sm:rounded-xl sm:ring-offset-2 ${
                     i === thumb ? "ring-[#003399]" : "ring-transparent hover:ring-zinc-300"
                   }`}
-                  aria-label={`View image ${i + 1}`}
+                  aria-label={t("productDetailExtra.viewImage", { number: i + 1 })}
                 >
                   <Image
                     src={src}
@@ -123,7 +128,10 @@ export function ProductDetailView({
             </h1>
             <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-zinc-600">
               <span>
-                <span className="font-semibold text-zinc-800">SKU:</span> {extra.sku}
+                <span className="font-semibold text-zinc-800">
+                  {t("productDetailExtra.sku")}:
+                </span>{" "}
+                {extra.sku}
               </span>
               <span className="inline-flex items-center gap-1.5 font-medium text-emerald-600">
                 <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
@@ -133,7 +141,7 @@ export function ProductDetailView({
                     clipRule="evenodd"
                   />
                 </svg>
-                In Stock
+                {t("productDetailExtra.inStock")}
               </span>
             </div>
             <p className="mt-2 text-xl font-bold text-zinc-900">{product.priceLabel}</p>
@@ -148,7 +156,7 @@ export function ProductDetailView({
                   type="button"
                   onClick={decQty}
                   className="flex h-10 w-10 items-center justify-center rounded-full text-lg font-semibold transition hover:bg-white"
-                  aria-label="Decrease quantity"
+                  aria-label={t("productDetailExtra.decreaseQty")}
                 >
                   −
                 </button>
@@ -159,7 +167,7 @@ export function ProductDetailView({
                   type="button"
                   onClick={incQty}
                   className="flex h-10 w-10 items-center justify-center rounded-full text-lg font-semibold transition hover:bg-white"
-                  aria-label="Increase quantity"
+                  aria-label={t("productDetailExtra.increaseQty")}
                 >
                   +
                 </button>
@@ -169,7 +177,7 @@ export function ProductDetailView({
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-stretch">
               <AddToCartButton
                 productId={product.id}
-                label="Select"
+                label={t("productDetailExtra.select")}
                 quantity={qty}
                 className="inline-flex h-12 w-full min-w-0 items-center justify-center rounded-full border-2 border-zinc-900 bg-white px-8 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-50 sm:w-auto sm:min-w-[9rem]"
               />
@@ -182,7 +190,7 @@ export function ProductDetailView({
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                Contact on WhatsApp
+                {t("productDetailExtra.contactWhatsapp")}
               </a>
             </div>
           </div>
@@ -199,7 +207,7 @@ export function ProductDetailView({
                   : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300"
               }`}
             >
-              Product description
+              {t("productDetailExtra.tabDescription")}
             </button>
             <button
               type="button"
@@ -210,7 +218,7 @@ export function ProductDetailView({
                   : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300"
               }`}
             >
-              User Manual
+              {t("productDetailExtra.tabManual")}
             </button>
           </div>
         </div>
@@ -220,10 +228,10 @@ export function ProductDetailView({
             <div className="mx-auto max-w-3xl text-center">
               <div className="mx-auto max-w-xs">
                 <p className="text-2xl font-bold tracking-tight text-[#003399] sm:text-3xl">
-                  HYUNDAI
+                  {t("productDetail.brandName")}
                 </p>
                 <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.35em] text-zinc-500">
-                  Electronics
+                  {t("productDetail.brandLine")}
                 </p>
               </div>
               <div className="relative mx-auto mt-8 aspect-[16/10] max-w-2xl overflow-hidden rounded-2xl bg-[#f3f4f6]">
@@ -243,7 +251,7 @@ export function ProductDetailView({
           ) : (
             <div>
               <p className="text-center text-2xl font-semibold text-zinc-300 sm:text-3xl">
-                User manual
+                {t("productDetailExtra.manualHeading")}
               </p>
               <div className="mx-auto mt-8 max-w-3xl rounded-2xl bg-[#f3f4f6] p-5 sm:p-6">
                 <div className="flex flex-col gap-6 rounded-xl bg-white p-5 shadow-sm ring-1 ring-black/[0.04] sm:flex-row sm:items-center sm:justify-between sm:p-6">
@@ -266,11 +274,10 @@ export function ProductDetailView({
                     </div>
                     <div>
                       <p className="text-base font-bold text-zinc-900 sm:text-lg">
-                        Product Manual &amp; Documentation
+                        {t("productDetailExtra.manualCardTitle")}
                       </p>
                       <p className="mt-2 max-w-xl text-sm leading-relaxed text-zinc-500">
-                        Download the full user manual for technical guidance and installation
-                        instructions.
+                        {t("productDetailExtra.manualCardDesc")}
                       </p>
                     </div>
                   </div>
@@ -303,7 +310,7 @@ export function ProductDetailView({
         <div className="mt-12 space-y-10">
           <div>
             <h3 className="text-lg font-bold sm:text-xl" style={{ color: navy }}>
-              Product description
+              {t("productDetail.description")}
             </h3>
             <p className="mt-3 max-w-4xl text-sm leading-relaxed text-zinc-600 sm:text-[15px]">
               {product.description}
@@ -312,7 +319,7 @@ export function ProductDetailView({
 
           <div>
             <h3 className="text-lg font-bold sm:text-xl" style={{ color: navy }}>
-              Technical specifications
+              {t("productDetail.technicalSpecs")}
             </h3>
             <div className="mt-4 rounded-2xl bg-[#f3f4f6] p-4 sm:p-6">
               <div className="grid gap-4 sm:grid-cols-3">
@@ -333,7 +340,7 @@ export function ProductDetailView({
 
           <div>
             <h3 className="text-lg font-bold sm:text-xl" style={{ color: navy }}>
-              Detailed specifications
+              {t("productDetail.detailedSpecs")}
             </h3>
             <div className="mt-4 overflow-hidden rounded-2xl bg-[#f3f4f6]">
               <dl className="divide-y divide-zinc-200/80">
@@ -356,7 +363,7 @@ export function ProductDetailView({
 
           <div>
             <h3 className="text-lg font-bold sm:text-xl" style={{ color: navy }}>
-              Related products
+              {t("productDetail.related")}
             </h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((r) => (
@@ -383,7 +390,7 @@ export function ProductDetailView({
                       href={`/products/${r.id}`}
                       className="inline-flex h-10 min-w-[7.5rem] w-full items-center justify-center rounded-full border-2 border-[#003399] bg-white px-6 text-sm font-semibold text-[#003399] transition hover:bg-[#003399]/5"
                     >
-                      Select
+                      {t("productDetail.select")}
                     </Link>
                   </div>
                 </article>

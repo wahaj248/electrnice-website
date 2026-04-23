@@ -1,26 +1,6 @@
-const testimonials = [
-  {
-    quote:
-      "Great quality products and excellent service. The 4K TV has completely changed our movie nights. The installation was seamless.",
-    initials: "RS",
-    name: "Rodger Struck",
-    title: "Homeowner",
-  },
-  {
-    quote:
-      "The Inverter AC is remarkably quiet. I was worried about my electricity bill, but the efficiency rating is exactly as advertised. Highly recommended.",
-    initials: "RR",
-    name: "Rhonda Rhodes",
-    title: "Interior designer",
-  },
-  {
-    quote:
-      "Best customer support I've ever experienced. They helped me pick the right tonnage for my office and followed up after installation.",
-    initials: "KA",
-    name: "Kenneth Allen",
-    title: "Business owner",
-  },
-];
+"use client";
+
+import { useTranslations } from "next-intl";
 
 function Stars() {
   return (
@@ -41,34 +21,55 @@ function Stars() {
 }
 
 export function CustomerExperiencesSection() {
+  const t = useTranslations();
+  const testimonials = [
+    {
+      quote: t("testimonials.quote1"),
+      initials: "RS",
+      name: t("testimonials.name1"),
+      title: t("testimonials.role1"),
+    },
+    {
+      quote: t("testimonials.quote2"),
+      initials: "RR",
+      name: t("testimonials.name2"),
+      title: t("testimonials.role2"),
+    },
+    {
+      quote: t("testimonials.quote3"),
+      initials: "KA",
+      name: t("testimonials.name3"),
+      title: t("testimonials.role3"),
+    },
+  ];
   return (
     <section className="bg-[#eef2f6] px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-center text-3xl font-bold tracking-tight text-black sm:text-4xl">
-          Customer Experiences
+          {t("testimonials.title")}
         </h2>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {testimonials.map((t) => (
+          {testimonials.map((item) => (
             <article
-              key={t.name}
+              key={item.name}
               className="flex flex-col rounded-2xl bg-white p-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] ring-1 ring-black/[0.04] sm:p-8"
             >
               <Stars />
               <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-black italic">
-                {t.quote}
+                {item.quote}
               </blockquote>
               <div className="mt-8 flex items-center gap-3">
                 <div
                   className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-zinc-200 text-sm font-bold text-black"
                   aria-hidden
                 >
-                  {t.initials}
+                  {item.initials}
                 </div>
                 <div className="min-w-0 text-left">
-                  <p className="truncate font-bold text-black">{t.name}</p>
+                  <p className="truncate font-bold text-black">{item.name}</p>
                   <p className="mt-0.5 text-xs font-medium uppercase tracking-wide text-black">
-                    {t.title}
+                    {item.title}
                   </p>
                 </div>
               </div>

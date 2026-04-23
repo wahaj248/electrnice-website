@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import { CatalogProductCard } from "@/components/CatalogProductCard";
 import { catalogProducts } from "@/lib/products";
 
@@ -8,14 +9,15 @@ type Filter = "all" | "TVs" | "ACs";
 
 const navy = "#003399";
 
-const filters: { key: Filter; label: string }[] = [
-  { key: "all", label: "All Products" },
-  { key: "TVs", label: "TVs" },
-  { key: "ACs", label: "ACs" },
-];
-
 export function ProductCatalogSection() {
+  const t = useTranslations();
   const [filter, setFilter] = useState<Filter>("all");
+
+  const filters: { key: Filter; label: string }[] = [
+    { key: "all", label: t("home.allProducts") },
+    { key: "TVs", label: t("nav.tvs") },
+    { key: "ACs", label: t("nav.acs") },
+  ];
 
   const visible = useMemo(() => {
     if (filter === "all") return catalogProducts;
@@ -30,7 +32,7 @@ export function ProductCatalogSection() {
             className="text-2xl font-bold tracking-tight sm:text-3xl"
             style={{ color: navy }}
           >
-            Product Catalog
+            {t("home.productCatalogTitle")}
           </h2>
           <div className="flex flex-wrap gap-3">
             {filters.map(({ key, label }) => {

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import heroCatalogBg from "../../../public/card/faq.png";
 import heroRightArt from "../../../public/card/right.png";
 import { FloatingSelectionBar } from "@/components/FloatingSelectionBar";
@@ -55,6 +56,7 @@ export function ProductsListingPage({
   mode: Mode;
   items: ListingProduct[];
 }) {
+  const t = useTranslations();
   const category: "TVs" | "ACs" = mode === "tvs" ? "TVs" : "ACs";
   const chipLabels = useMemo(() => filterChipLabelsForCategory(category), [category]);
   const [selectedChips, setSelectedChips] = useState<Set<string>>(() => new Set());
@@ -99,13 +101,13 @@ export function ProductsListingPage({
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
               <Link href="/" className="font-medium text-zinc-800 hover:text-[#003399]">
-                Home
+                {t("nav.home")}
               </Link>
             </li>
             <li aria-hidden className="text-zinc-400">
               /
             </li>
-            <li className="font-medium text-zinc-500">Products</li>
+            <li className="font-medium text-zinc-500">{t("catalog.breadcrumbProducts")}</li>
           </ol>
         </nav>
 
@@ -129,18 +131,16 @@ export function ProductsListingPage({
             <div className="relative z-10 grid grid-cols-1 items-center gap-6 px-6 py-8 sm:px-10 sm:py-10 md:h-[292px] md:min-h-[292px] md:grid-cols-[minmax(0,1fr)_371px] md:items-center md:gap-4 md:py-6 lg:py-8">
               <div className="flex flex-col justify-center text-white">
                 <p className="text-sm font-semibold uppercase tracking-wide text-white/85">
-                  That Power Your Life
+                  {t("catalog.heroTagline")}
                 </p>
                 <h1
                   id="catalog-hero-heading"
                   className="mt-2 text-3xl font-bold uppercase leading-tight tracking-wide sm:text-4xl lg:text-[2.35rem]"
                 >
-                  Technological experiences
+                  {t("catalog.heroTitle")}
                 </h1>
                 <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/90 sm:text-base">
-                  {mode === "tvs"
-                    ? "Browse smart LED televisions with vivid picture, streaming apps, and sizes for every room."
-                    : "Browse inverter split air conditioners engineered for efficient cooling and quieter comfort."}
+                  {mode === "tvs" ? t("catalog.heroDescTvs") : t("catalog.heroDescAcs")}
                 </p>
               </div>
               <div className="relative mx-auto hidden h-[292px] w-full max-w-[371px] overflow-hidden md:mx-0 md:block md:w-[371px] md:max-w-[371px] md:shrink-0">
@@ -161,14 +161,18 @@ export function ProductsListingPage({
         <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,240px)_1fr] lg:gap-12">
           <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
             <div>
-              <h2 className="text-xs font-bold uppercase tracking-wide text-zinc-500">Product categories</h2>
+              <h2 className="text-xs font-bold uppercase tracking-wide text-zinc-500">
+                {t("catalog.productCategories")}
+              </h2>
               <nav className="mt-4 flex flex-col gap-1" aria-label="Product categories">
-                <CategoryRow href="/acs" label="Air conditioners" active={mode === "acs"} />
-                <CategoryRow href="/tvs" label="Televisions" active={mode === "tvs"} />
+                <CategoryRow href="/acs" label={t("catalog.categoryAcs")} active={mode === "acs"} />
+                <CategoryRow href="/tvs" label={t("catalog.categoryTvs")} active={mode === "tvs"} />
               </nav>
             </div>
             <div>
-              <h2 className="text-xs font-bold uppercase tracking-wide text-zinc-500">Characteristics</h2>
+              <h2 className="text-xs font-bold uppercase tracking-wide text-zinc-500">
+                {t("catalog.characteristics")}
+              </h2>
               <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Filter by characteristics">
                 {chipLabels.map((label) => {
                   const on = selectedChips.has(label);
@@ -195,16 +199,16 @@ export function ProductsListingPage({
           <div>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-zinc-500 sm:text-sm">
-                <span className="shrink-0">Sort by</span>
+                <span className="shrink-0">{t("catalog.sortBy")}</span>
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value as typeof sort)}
                   className="h-10 min-w-[11rem] rounded-lg border border-zinc-200 bg-white px-3 text-sm font-medium text-zinc-900 shadow-sm focus:border-[#003399] focus:outline-none focus:ring-2 focus:ring-[#003399]/25"
                   style={{ color: navy }}
                 >
-                  <option value="newer">Newer arrivals</option>
-                  <option value="price-asc">Price: Low to high</option>
-                  <option value="price-desc">Price: High to low</option>
+                  <option value="newer">{t("catalog.sortNewer")}</option>
+                  <option value="price-asc">{t("catalog.sortPriceAsc")}</option>
+                  <option value="price-desc">{t("catalog.sortPriceDesc")}</option>
                 </select>
               </label>
               <div className="relative w-full sm:max-w-xs">
@@ -219,7 +223,7 @@ export function ProductsListingPage({
                 </span>
                 <input
                   type="search"
-                  placeholder="Search products..."
+                  placeholder={t("catalog.searchPlaceholder")}
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="h-10 w-full rounded-lg border border-zinc-200 bg-white py-2 pl-9 pr-3 text-sm text-zinc-900 shadow-sm placeholder:text-zinc-400 focus:border-[#003399] focus:outline-none focus:ring-2 focus:ring-[#003399]/25"
@@ -229,7 +233,7 @@ export function ProductsListingPage({
 
             {filteredSorted.length === 0 ? (
               <p className="mt-10 rounded-xl border border-dashed border-zinc-200 bg-zinc-50 px-4 py-10 text-center text-sm text-zinc-600">
-                No products match your filters. Try clearing characteristics or adjusting search.
+                {t("catalog.empty")}
               </p>
             ) : (
               <ul className="mt-8 grid list-none grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
