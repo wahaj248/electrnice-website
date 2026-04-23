@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import { ProductDetailView } from "@/components/product-detail/ProductDetailView";
 import { formatInr } from "@/lib/format";
-import { getProductDetailExtra } from "@/lib/product-detail-extras";
+import {
+  getLocalizedProductDetail,
+  resolveLocaleFromCookie,
+} from "@/lib/product-detail-locales";
 import { getProductById, products, resolveImageSrc } from "@/lib/products";
 
 type Props = { params: Promise<{ id: string }> };
@@ -14,10 +18,17 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const product = getProductById(id);
-  if (!product) return { title: "Product" };
+  if (!product) {
+    const messages = (await import(`../../../../messages/en.json`)).default;
+    return { title: messages.productDetail.metaFallbackTitle };
+  }
+  const cookieStore = await cookies();
+  const locale = resolveLocaleFromCookie(cookieStore.get("NEXT_LOCALE")?.value);
+  const messages = (await import(`../../../../messages/${locale}.json`)).default;
+  const localized = getLocalizedProductDetail(locale, product);
   return {
-    title: product.name,
-    description: product.shortDescription,
+    title: localized.name,
+    description: localized.shortDescription,
   };
 }
 
@@ -26,35 +37,41 @@ export default async function ProductDetailPage({ params }: Props) {
   const product = getProductById(id);
   if (!product) notFound();
 
+  const cookieStore = await cookies();
+  const locale = resolveLocaleFromCookie(cookieStore.get("NEXT_LOCALE")?.value);
+
   const imageSrc = resolveImageSrc(product.image);
   const gallerySrcs = Array.from({ length: 5 }, () => imageSrc);
 
-  const extra = getProductDetailExtra(product.id);
+  const main = getLocalizedProductDetail(locale, product);
 
   const related = products
     .filter((p) => p.id !== product.id)
     .slice(0, 4)
-    .map((p) => ({
-      id: p.id,
-      name: p.name,
-      shortDescription: p.shortDescription,
-      imageSrc: resolveImageSrc(p.image),
-      priceLabel: formatInr(p.price),
-    }));
+    .map((p) => {
+      const loc = getLocalizedProductDetail(locale, p);
+      return {
+        id: p.id,
+        name: loc.name,
+        shortDescription: loc.shortDescription,
+        imageSrc: resolveImageSrc(p.image),
+        priceLabel: formatInr(p.price),
+      };
+    });
 
   return (
     <ProductDetailView
       product={{
         id: product.id,
-        name: product.name,
+        name: main.name,
         priceLabel: formatInr(product.price),
         category: product.category,
-        shortDescription: product.shortDescription,
-        description: product.description,
+        shortDescription: main.shortDescription,
+        description: main.description,
         imageSrc,
         gallerySrcs,
       }}
-      extra={extra}
+      extra={main.extra}
       related={related}
     />
   );

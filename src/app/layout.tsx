@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { cookies } from "next/headers";
 import { AppShell } from "@/components/AppShell";
 import "./globals.css";
 
@@ -21,21 +23,28 @@ export const metadata: Metadata = {
   description: "Electronics shop — home, products, product details, and cart.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const rawLocale = cookieStore.get("NEXT_LOCALE")?.value;
+  const locale = rawLocale === "es" ? "es" : "en";
+  const messages = (await import(`../../messages/${locale}.json`)).default;
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body
         className="flex min-h-full flex-col font-sans"
         suppressHydrationWarning
       >
-        <AppShell>{children}</AppShell>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <AppShell>{children}</AppShell>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

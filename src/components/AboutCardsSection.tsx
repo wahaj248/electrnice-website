@@ -1,40 +1,41 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import AboutCardsImage from "../../public/card/img1.png";
 import AboutCardsImage2 from "../../public/card/img2.png";
 import AboutCardsImage3 from "../../public/card/img3.png";
-const cards = [
-  {
-    href: "/about",
-    image:
-      AboutCardsImage,
-    brand: "HYUNDAI corporation",
-    title: "About Company",
-    alt: "Modern office building at dusk",
-  },
-  {
-    href: "/products",
-    image:
-      AboutCardsImage2,
-    brand: null as string | null,
-    title: "About Our Products",
-    alt: "HYUNDAI smart TV and home electronics",
-  },
-  {
-    href: "/products",
-    image:
-      AboutCardsImage3,
-    brand: null as string | null,
-    title: "Catalog",
-    alt: "Product catalogs and brochures",
-  },
-];
 
 export function AboutCardsSection() {
+  const t = useTranslations();
+  const localized = [
+    {
+      href: "/about",
+      image: AboutCardsImage,
+      brand: "HYUNDAI corporation",
+      title: t("aboutCards.card1Title"),
+      alt: "Modern office building at dusk",
+    },
+    {
+      href: "/products",
+      image: AboutCardsImage2,
+      brand: null as string | null,
+      title: t("aboutCards.card2Title"),
+      alt: "HYUNDAI smart TV and home electronics",
+    },
+    {
+      href: "/products",
+      image: AboutCardsImage3,
+      brand: null as string | null,
+      title: t("aboutCards.card3Title"),
+      alt: "Product catalogs and brochures",
+    },
+  ];
   return (
     <section className="bg-white px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
-        {cards.map((card) => (
+        {localized.map((card) => (
           <Link
             key={card.title}
             href={card.href}
@@ -58,7 +59,7 @@ export function AboutCardsSection() {
                 {card.title}
               </h3>
               <span className="mt-6 inline-flex h-11 items-center justify-center rounded-full border-2 border-white bg-transparent px-8 text-sm font-semibold text-white transition group-hover:bg-white/10">
-                Learn more
+                {t("aboutCards.learnMore")}
               </span>
             </div>
           </Link>

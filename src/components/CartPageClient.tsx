@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { cartLineTotal, useCart } from "@/context/CartContext";
 import { formatInr } from "@/lib/format";
 import { getProductById } from "@/lib/products";
 
 export function CartPageClient() {
   const { lines, setQuantity, removeItem, clear, itemCount } = useCart();
+  const t = useTranslations();
 
   const subtotal = lines.reduce((sum, line) => sum + cartLineTotal(line), 0);
 
@@ -15,16 +17,16 @@ export function CartPageClient() {
     return (
       <div className="rounded-xl border border-dashed border-zinc-300 bg-white p-10 text-center dark:border-zinc-700 dark:bg-zinc-900">
         <p className="text-base font-medium text-zinc-900 dark:text-zinc-50">
-          Your cart is empty
+          {t("cartPage.emptyTitle")}
         </p>
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          Add items from a product page — navbar and footer stay the same here too.
+          {t("cartPage.emptyDesc")}
         </p>
         <Link
           href="/products"
           className="mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-sky-600 px-5 text-sm font-semibold text-white hover:bg-sky-700"
         >
-          Browse products
+          {t("cartPage.browseProducts")}
         </Link>
       </div>
     );
@@ -65,7 +67,7 @@ export function CartPageClient() {
                 </p>
                 <div className="mt-3 flex flex-wrap items-center gap-3">
                   <label className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                    Qty
+                    {t("cartPage.qty")}
                     <input
                       type="number"
                       min={1}
@@ -81,7 +83,7 @@ export function CartPageClient() {
                     onClick={() => removeItem(line.productId)}
                     className="text-sm font-medium text-red-600 hover:text-red-700 dark:text-red-400"
                   >
-                    Remove
+                    {t("cartPage.remove")}
                   </button>
                 </div>
               </div>
@@ -96,18 +98,18 @@ export function CartPageClient() {
           onClick={() => clear()}
           className="text-sm font-medium text-zinc-500 underline-offset-2 hover:text-zinc-800 hover:underline dark:hover:text-zinc-300"
         >
-          Clear cart
+          {t("cartPage.clear")}
         </button>
       </div>
       <aside className="h-fit rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
         <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-          Summary
+          {t("cartPage.summary")}
         </h2>
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          {itemCount} {itemCount === 1 ? "item" : "items"}
+          {itemCount} {itemCount === 1 ? t("cartPage.item") : t("cartPage.items")}
         </p>
         <p className="mt-4 flex items-center justify-between text-sm">
-          <span className="text-zinc-600 dark:text-zinc-400">Subtotal</span>
+          <span className="text-zinc-600 dark:text-zinc-400">{t("cartPage.subtotal")}</span>
           <span className="font-semibold text-zinc-900 dark:text-zinc-50">
             {formatInr(subtotal)}
           </span>
@@ -118,7 +120,7 @@ export function CartPageClient() {
           className="mt-6 flex w-full h-11 cursor-not-allowed items-center justify-center rounded-lg bg-zinc-200 text-sm font-semibold text-zinc-500 dark:bg-zinc-800 dark:text-zinc-500"
           title="Demo only"
         >
-          Checkout (demo)
+          {t("cartPage.checkoutDemo")}
         </button>
       </aside>
     </div>

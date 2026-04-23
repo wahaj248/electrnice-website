@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { guidePosts } from "@/lib/guides";
 
 
@@ -8,6 +11,7 @@ const textGray = "#666666";
 const linkBlue = "#0056b3";
 
 export function LatestInsightsSection() {
+  const t = useTranslations();
   return (
     <section className="bg-white px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto max-w-6xl">
@@ -15,7 +19,7 @@ export function LatestInsightsSection() {
           className="text-center text-3xl font-bold tracking-tight sm:text-4xl"
           style={{ color: headingNavy }}
         >
-          Latest Insights &amp; Guides
+          {t("insights.title")}
         </h2>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
@@ -39,26 +43,26 @@ export function LatestInsightsSection() {
                   className="text-[11px] font-semibold uppercase tracking-[0.12em]"
                   style={{ color: textGray }}
                 >
-                  {post.category}
+                  {t(`guides.${post.slug}.category`)}
                 </p>
                 <h3
                   className="mt-2 text-lg font-bold leading-snug sm:text-xl"
                   style={{ color: headingNavy }}
                 >
-                  {post.title}
+                  {t(`guides.${post.slug}.title`)}
                 </h3>
                 <p
                   className="mt-3 flex-1 text-sm leading-relaxed sm:text-[15px]"
                   style={{ color: textGray }}
                 >
-                  {post.description}
+                  {t(`guides.${post.slug}.description`)}
                 </p>
                 <Link
                   href={`/guides/${post.slug}`}
                   className="mt-5 inline-flex items-center gap-1 text-sm font-semibold transition hover:underline"
                   style={{ color: linkBlue }}
                 >
-                  Read More
+                  {t("insights.readMore")}
                   <span aria-hidden>→</span>
                 </Link>
               </div>

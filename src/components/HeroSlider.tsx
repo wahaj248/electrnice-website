@@ -2,46 +2,34 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useLocale, useMessages, useTranslations } from "next-intl";
 import { FloatingSelectionBar } from "@/components/FloatingSelectionBar";
 import HeroSliderImage from "../../public/heroslider/img1.png";
 
-type Slide = {
+type SlideText = {
   title: string;
   subtitle: string;
   col1: string[];
   col2: string[];
-  image: string | any;
+};
+
+type Slide = SlideText & {
+  image: string | typeof HeroSliderImage;
   ctaHref: string;
 };
 
-const slides: Slide[] = [
+const SLIDE_META: Pick<Slide, "image" | "ctaHref">[] = [
   {
-    title: 'HYUNDAI 32" Full HD SMART LED TV',
-    subtitle:
-      "A blazingly fast interface that lets you do what you want to do.",
-    col1: ["3840x2160 Resolution", "Dolby Audio"],
-    col2: ["Netflix/YouTube/HDR", "VIDAA SYSTEM"],
-    image:
-    HeroSliderImage,
+    image: HeroSliderImage,
     ctaHref: "/products",
   },
   {
-    title: "HYUNDAI Inverter Split AC",
-    subtitle:
-      "Quiet cooling, energy-efficient compressor, and clean air filters for every season.",
-    col1: ["Fast cooling", "Low noise operation"],
-    col2: ["R32 eco refrigerant", "Smart diagnostics"],
     image:
       "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1600&q=80",
     ctaHref: "/acs",
   },
   {
-    title: "HYUNDAI QLED 4K Entertainment",
-    subtitle:
-      "Rich contrast, vivid color, and seamless streaming in one sleek frame.",
-    col1: ["Quantum dot color", "HDR10+ support"],
-    col2: ["Voice assistant ready", "Gaming mode"],
     image:
       "https://images.unsplash.com/photo-1461151304267-38535e780c79?w=1600&q=80",
     ctaHref: "/tvs",
@@ -66,6 +54,28 @@ function CheckIcon() {
 }
 
 export function HeroSlider() {
+  const t = useTranslations();
+  const messages = useMessages();
+  const locale = useLocale();
+
+  const slides = useMemo((): Slide[] => {
+    const hero = messages.heroSlider as { slides?: SlideText[] };
+    const slideTexts = hero?.slides;
+    if (!slideTexts?.length) {
+      return SLIDE_META.map((meta) => ({
+        title: "",
+        subtitle: "",
+        col1: [],
+        col2: [],
+        ...meta,
+      }));
+    }
+    return slideTexts.map((text, i) => ({
+      ...text,
+      ...SLIDE_META[i],
+    }));
+  }, [messages, locale]);
+
   const [index, setIndex] = useState(0);
   const total = slides.length;
 
@@ -77,18 +87,22 @@ export function HeroSlider() {
   );
 
   useEffect(() => {
-    const t = window.setInterval(() => go(1), 7000);
-    return () => window.clearInterval(t);
+    const timer = window.setInterval(() => go(1), 7000);
+    return () => window.clearInterval(timer);
   }, [go]);
 
-  const slide = slides[index];
+  useEffect(() => {
+    setIndex((i) => (i >= total ? 0 : i));
+  }, [total]);
+
+  const slide = slides[index] ?? slides[0];
 
   return (
     <section className="relative min-h-[min(100vh,640px)] w-full bg-[#0a1628]">
       <div className="absolute inset-0">
         {slides.map((s, i) => (
           <div
-            key={s.title}
+            key={`${locale}-${s.title}-${i}`}
             className={`absolute inset-0 transition-opacity duration-500 ease-out ${
               i === index ? "z-[1] opacity-100" : "z-0 opacity-0"
             }`}
@@ -142,7 +156,7 @@ export function HeroSlider() {
               href={slide.ctaHref}
               className="inline-flex h-11 items-center justify-center rounded-full bg-[#003399] px-8 text-sm font-semibold text-white shadow-sm transition hover:bg-[#00287a]"
             >
-              Learn more
+              {t("heroSlider.learnMore")}
             </Link>
           </div>
         </div>
@@ -152,7 +166,7 @@ export function HeroSlider() {
             type="button"
             onClick={() => go(-1)}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/80 text-white transition hover:bg-white/10"
-            aria-label="Previous slide"
+            aria-label={t("heroSlider.prev")}
           >
             <span className="text-lg leading-none">‹</span>
           </button>
@@ -167,7 +181,7 @@ export function HeroSlider() {
                     ? "h-2 w-2 rounded-full bg-white"
                     : "h-2 w-2 rounded-full bg-white/40 transition hover:bg-white/70"
                 }
-                aria-label={`Go to slide ${i + 1}`}
+                aria-label={t("heroSlider.goToSlide", { number: i + 1 })}
               />
             ))}
           </div>
@@ -175,7 +189,7 @@ export function HeroSlider() {
             type="button"
             onClick={() => go(1)}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/80 text-white transition hover:bg-white/10"
-            aria-label="Next slide"
+            aria-label={t("heroSlider.next")}
           >
             <span className="text-lg leading-none">›</span>
           </button>

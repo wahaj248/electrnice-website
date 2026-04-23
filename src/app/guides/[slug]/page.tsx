@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { getGuideBySlug, guidePosts } from "@/lib/guides";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -21,6 +22,7 @@ export default async function GuidePage({ params }: Props) {
   const { slug } = await params;
   const post = getGuideBySlug(slug);
   if (!post) notFound();
+  const t = await getTranslations();
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
@@ -29,16 +31,16 @@ export default async function GuidePage({ params }: Props) {
         className="text-sm font-medium"
         style={{ color: "#0056b3" }}
       >
-        ← Back to home
+        {t("guidePage.backHome")}
       </Link>
       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500">
-        {post.category}
+        {t(`guides.${post.slug}.category`)}
       </p>
       <h1
         className="mt-2 text-3xl font-bold tracking-tight"
         style={{ color: "#001f3f" }}
       >
-        {post.title}
+        {t(`guides.${post.slug}.title`)}
       </h1>
       <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-zinc-100">
         <Image
@@ -50,8 +52,10 @@ export default async function GuidePage({ params }: Props) {
           priority
         />
       </div>
-      <p className="mt-8 text-lg leading-relaxed text-zinc-600">{post.description}</p>
-      <p className="mt-6 leading-relaxed text-zinc-700">{post.body}</p>
+      <p className="mt-8 text-lg leading-relaxed text-zinc-600">
+        {t(`guides.${post.slug}.description`)}
+      </p>
+      <p className="mt-6 leading-relaxed text-zinc-700">{t(`guides.${post.slug}.body`)}</p>
     </div>
   );
 }

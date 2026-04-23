@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -10,15 +13,15 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 export function CtaReadySection() {
+  const t = useTranslations();
   return (
     <section className="bg-[#001f3f] px-4 py-16 text-center sm:px-6 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-3xl">
         <h2 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
-          Ready to Choose Your Products?
+          {t("ctaReady.title")}
         </h2>
         <p className="mt-4 text-base max-w-[80%] mx-auto font-normal leading-relaxed text-white/90 sm:text-lg">
-          Select your items and contact us instantly via WhatsApp for personalized
-          guidance and the best market offers.
+          {t("ctaReady.description")}
         </p>
         <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center sm:justify-center">
           <a
@@ -28,13 +31,13 @@ export function CtaReadySection() {
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1ebe57] sm:px-10"
           >
             <WhatsAppIcon className="h-5 w-5 shrink-0" />
-            Contact on WhatsApp
+            {t("ctaReady.contactWhatsapp")}
           </a>
           <Link
             href="/products"
             className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white bg-transparent px-8 text-sm font-semibold text-white transition hover:bg-white/10 sm:px-10"
           >
-            View Catalog
+            {t("ctaReady.viewCatalog")}
           </Link>
         </div>
       </div>
