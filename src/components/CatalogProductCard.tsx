@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/lib/products";
+import { resolveImageSrc } from "@/lib/products";
 
 const navy = "#003399";
 
@@ -41,7 +42,7 @@ export function CatalogProductCard({
       <div className="flex w-full justify-center bg-zinc-100 py-2">
         <div className="group relative h-[174px] w-[252px] shrink-0 overflow-hidden bg-zinc-100">
           <Image
-            src={product.image}
+            src={resolveImageSrc(product.image)}
             alt={product.name}
             fill
             priority={priority}

@@ -7,7 +7,12 @@ import {
   getLocalizedProductDetail,
   resolveLocaleFromCookie,
 } from "@/lib/product-detail-locales";
-import { getProductById, products, resolveImageSrc } from "@/lib/products";
+import {
+  getGallerySrcs,
+  getProductById,
+  products,
+  resolveImageSrc,
+} from "@/lib/products";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -41,7 +46,7 @@ export default async function ProductDetailPage({ params }: Props) {
   const locale = resolveLocaleFromCookie(cookieStore.get("NEXT_LOCALE")?.value);
 
   const imageSrc = resolveImageSrc(product.image);
-  const gallerySrcs = Array.from({ length: 5 }, () => imageSrc);
+  const gallerySrcs = getGallerySrcs(product, imageSrc);
 
   const main = getLocalizedProductDetail(locale, product);
 
