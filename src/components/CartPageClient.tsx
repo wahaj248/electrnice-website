@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { cartLineTotal, useCart } from "@/context/CartContext";
 import { formatInr } from "@/lib/format";
-import { getProductById } from "@/lib/products";
+import { getProductById, resolveImageSrc } from "@/lib/products";
 
 export function CartPageClient() {
   const { lines, setQuantity, removeItem, clear, itemCount } = useCart();
@@ -48,7 +48,7 @@ export function CartPageClient() {
                 className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-800"
               >
                 <Image
-                  src={product.image}
+                  src={resolveImageSrc(product.image)}
                   alt={product.name}
                   fill
                   className="object-cover"

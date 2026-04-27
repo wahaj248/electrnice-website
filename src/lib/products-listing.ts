@@ -25,6 +25,7 @@ const TV_CHIP_ORDER = [
 
 const AC_CHIP_ORDER = [
   "Inverter",
+  "On-Off",
   "1 Ton",
   "1.5 Ton",
   "2 Ton",
@@ -45,7 +46,9 @@ function listingTagsForProduct(p: Product): string[] {
     if (n.includes('65"')) tags.push("65 inches", "4K");
     tags.push("Android TV", "Wi-Fi");
   } else {
-    tags.push("Inverter", "Cold/Hot");
+    if (n.includes("On-Off")) tags.push("On-Off");
+    else tags.push("Inverter");
+    tags.push("Cold/Hot");
     if (n.includes("1 Ton") && !n.includes("1.5")) tags.push("1 Ton");
     if (n.includes("1.5 Ton")) tags.push("1.5 Ton");
     if (n.includes("2 Ton")) tags.push("2 Ton");

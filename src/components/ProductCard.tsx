@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/lib/products";
+import { resolveImageSrc } from "@/lib/products";
 import { formatInr } from "@/lib/format";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -11,7 +12,7 @@ export function ProductCard({ product }: { product: Product }) {
     >
       <div className="relative aspect-[4/3] bg-zinc-100 dark:bg-zinc-800">
         <Image
-          src={product.image}
+          src={resolveImageSrc(product.image)}
           alt={product.name}
           fill
           className="object-cover transition duration-300 group-hover:scale-[1.02]"
