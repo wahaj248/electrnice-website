@@ -1,8 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { CatalogProductCard } from "@/components/CatalogProductCard";
+import { getLocalizedProductDetail } from "@/lib/product-detail-locales";
 import { catalogProducts } from "@/lib/products";
 
 type Filter = "all" | "TVs" | "ACs";
@@ -11,6 +12,7 @@ const navy = "#003399";
 
 export function ProductCatalogSection() {
   const t = useTranslations();
+  const locale = useLocale();
   const [filter, setFilter] = useState<Filter>("all");
 
   const filters: { key: Filter; label: string }[] = [
@@ -20,9 +22,17 @@ export function ProductCatalogSection() {
   ];
 
   const visible = useMemo(() => {
-    if (filter === "all") return catalogProducts;
-    return catalogProducts.filter((p) => p.category === filter);
-  }, [filter]);
+    const base =
+      filter === "all"
+        ? catalogProducts
+        : catalogProducts.filter((p) => p.category === filter);
+
+    // Home cards should show localized name/description like product detail page.
+    return base.map((p) => {
+      const loc = getLocalizedProductDetail(locale === "es" ? "es" : "en", p);
+      return { ...p, name: loc.name, shortDescription: loc.shortDescription };
+    });
+  }, [filter, locale]);
 
   return (
     <section className="border-t border-zinc-200 bg-white px-4 py-16 sm:px-6 lg:py-20">

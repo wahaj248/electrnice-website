@@ -134,7 +134,7 @@ export function Navbar() {
             ) : null}
           </button>
 
-          {/* <div className="hidden md:block">
+          <div className="hidden md:block">
             <label className="sr-only" htmlFor="locale-switch">
               {t("nav.language")}
             </label>
@@ -147,7 +147,7 @@ export function Navbar() {
               <option value="en">{t("language.english")}</option>
               <option value="es">{t("language.spanish")}</option>
             </select>
-          </div> */}
+          </div>
 
           <Link
             href="/#contact"
