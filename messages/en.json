@@ -157,11 +157,6 @@
     "title": "Latest Insights & Guides",
     "readMore": "Read More"
   },
-  "aboutPage": {
-    "title": "About HYUNDAI Electronics",
-    "body": "We bring the latest in display and climate control technology to your home. This demo page is linked from the home “About Company” card.",
-    "backHome": "← Back to home"
-  },
   "faqPage": {
     "backHome": "← Back to home",
     "title": "FAQs - Everything You Need To Know",
@@ -178,8 +173,7 @@
     "desc": "Click a card for full details and add-to-cart. Navbar and footer stay the same as on the home page."
   },
   "cartShell": {
-    "title": "Cart",
-    "desc": "Same top navigation and footer as Home and Products."
+    "title": "Cart"
   },
   "guidePage": {
     "backHome": "← Back to home"

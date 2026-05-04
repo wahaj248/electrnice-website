@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { ProductCard } from "@/components/ProductCard";
+import {
+  getLocalizedProductDetail,
+  resolveLocaleFromCookie,
+} from "@/lib/product-detail-locales";
 import { products } from "@/lib/products";
 import { getTranslations } from "next-intl/server";
 
@@ -10,6 +15,12 @@ export const metadata: Metadata = {
 
 export default async function ProductsPage() {
   const t = await getTranslations();
+  const cookieStore = await cookies();
+  const locale = resolveLocaleFromCookie(cookieStore.get("NEXT_LOCALE")?.value);
+  const localizedProducts = products.map((p) => {
+    const loc = getLocalizedProductDetail(locale, p);
+    return { ...p, name: loc.name, shortDescription: loc.shortDescription };
+  });
   return (
     <div className="bg-zinc-50 py-10 dark:bg-zinc-950">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -20,7 +31,7 @@ export default async function ProductsPage() {
           {t("productsPage.desc")}
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((p) => (
+          {localizedProducts.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
         </div>

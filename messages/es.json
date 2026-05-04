@@ -157,11 +157,6 @@
     "title": "Últimas guías y consejos",
     "readMore": "Leer más"
   },
-  "aboutPage": {
-    "title": "Acerca de HYUNDAI Electronics",
-    "body": "Llevamos lo último en tecnología de pantallas y climatización a tu hogar. Esta página de demostración está vinculada desde la tarjeta “Sobre la empresa” en inicio.",
-    "backHome": "← Volver al inicio"
-  },
   "faqPage": {
     "backHome": "← Volver al inicio",
     "title": "Preguntas frecuentes - Todo lo que necesitas saber",
@@ -178,8 +173,7 @@
     "desc": "Haz clic en una tarjeta para ver los detalles y agregar al carrito. La barra superior y el pie de página se mantienen como en inicio."
   },
   "cartShell": {
-    "title": "Carrito",
-    "desc": "La barra superior y el pie de página son los mismos que en Inicio y Productos."
+    "title": "Carrito"
   },
   "guidePage": {
     "backHome": "← Volver al inicio"
