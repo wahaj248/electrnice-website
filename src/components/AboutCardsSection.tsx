@@ -11,7 +11,7 @@ export function AboutCardsSection() {
   const t = useTranslations();
   const localized = [
     {
-      href: "/about",
+      href: "/",
       image: AboutCardsImage,
       brand: "HYUNDAI corporation",
       title: t("aboutCards.card1Title"),
