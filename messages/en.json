@@ -35,9 +35,7 @@
     "emptyDesc": "Browse products and tap Select to add them here.",
     "browseProducts": "Browse products",
     "remove": "Remove",
-    "contactWhatsapp": "Contact on WhatsApp",
-    "orReview": "Or review on the full",
-    "cartPage": "cart page"
+    "contactWhatsapp": "Contact on WhatsApp"
   },
   "selectionBar": {
     "selection": "Selection",
@@ -60,19 +58,6 @@
     "sortPriceDesc": "Price: High to low",
     "searchPlaceholder": "Search products...",
     "empty": "No products match your filters. Try clearing characteristics or adjusting search."
-  },
-  "cartPage": {
-    "emptyTitle": "Your cart is empty",
-    "emptyDesc": "Add items from a product page — navbar and footer stay the same here too.",
-    "browseProducts": "Browse products",
-    "qty": "Qty",
-    "remove": "Remove",
-    "clear": "Clear cart",
-    "summary": "Summary",
-    "item": "item",
-    "items": "items",
-    "subtotal": "Subtotal",
-    "checkoutDemo": "Checkout (demo)"
   },
   "productDetail": {
     "description": "Product description",
