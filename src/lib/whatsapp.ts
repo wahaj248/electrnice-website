@@ -1,3 +1,11 @@
-/** Update this number/message once for the whole site. */
-export const WHATSAPP_URL =
-  "https://wa.me/12101231230?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20HYUNDAI%20electronics.";
+/** E.164 digits only (no +), used by wa.me links */
+export const WHATSAPP_PHONE = "12101231230";
+
+export function buildWhatsAppUrl(message: string): string {
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+}
+
+/** Default CTA when no product context (footer, cart, etc.) */
+export const WHATSAPP_URL = buildWhatsAppUrl(
+  "Hi, I'd like to know more about HYUNDAI electronics.",
+);
