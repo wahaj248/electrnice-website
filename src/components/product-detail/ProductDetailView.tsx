@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { CtaReadySection } from "@/components/CtaReadySection";
 import type { ProductDetailExtra } from "@/lib/product-detail-extras";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const navy = "#003399";
 
@@ -20,6 +20,8 @@ export type ProductDetailDTO = {
   description: string;
   imageSrc: string;
   gallerySrcs: string[];
+  /** Absolute URL of this product page for WhatsApp share */
+  productPageUrl: string;
 };
 
 export type RelatedProductDTO = {
@@ -47,6 +49,16 @@ export function ProductDetailView({
   const [qty, setQty] = useState(1);
 
   const mainSrc = product.gallerySrcs[thumb] ?? product.imageSrc;
+
+  const whatsappHref = useMemo(() => {
+    const message = product.productPageUrl
+      ? t("productDetailExtra.whatsappPrefillWithUrl", {
+          name: product.name,
+          url: product.productPageUrl,
+        })
+      : t("productDetailExtra.whatsappPrefillNoUrl", { name: product.name });
+    return buildWhatsAppUrl(message);
+  }, [product.name, product.productPageUrl, t]);
 
   const categoryLine = useMemo(() => {
     if (product.category === "TVs") return t("productDetail.categoryEyebrowTv");
@@ -182,7 +194,7 @@ export function ProductDetailView({
                 className="inline-flex h-12 w-full min-w-0 items-center justify-center rounded-full border-2 border-zinc-900 bg-white px-8 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-50 sm:w-auto sm:min-w-[9rem]"
               />
               <a
-                href={WHATSAPP_URL}
+                href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 w-full min-w-0 items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 text-sm font-semibold text-white transition hover:bg-[#1ebe57] sm:w-auto sm:px-8"

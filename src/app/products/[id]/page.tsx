@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { ProductDetailView } from "@/components/product-detail/ProductDetailView";
 import { formatInr } from "@/lib/format";
@@ -50,6 +50,11 @@ export default async function ProductDetailPage({ params }: Props) {
 
   const main = getLocalizedProductDetail(locale, product);
 
+  const headerList = await headers();
+  const host = headerList.get("x-forwarded-host") ?? headerList.get("host") ?? "";
+  const proto = headerList.get("x-forwarded-proto") ?? "https";
+  const productPageUrl = host ? `${proto}://${host}/products/${id}` : "";
+
   const related = products
     .filter((p) => p.id !== product.id)
     .slice(0, 4)
@@ -75,6 +80,7 @@ export default async function ProductDetailPage({ params }: Props) {
         description: main.description,
         imageSrc,
         gallerySrcs,
+        productPageUrl,
       }}
       extra={main.extra}
       related={related}

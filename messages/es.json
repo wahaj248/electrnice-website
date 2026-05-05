@@ -209,6 +209,8 @@
     "increaseQty": "Aumentar cantidad",
     "select": "Seleccionar",
     "contactWhatsapp": "Contactar por WhatsApp",
+    "whatsappPrefillWithUrl": "¡Hola! Me interesa este producto HYUNDAI:\n{name}\n{url}",
+    "whatsappPrefillNoUrl": "¡Hola! Me interesa este producto HYUNDAI:\n{name}",
     "tabDescription": "Descripción del producto",
     "tabManual": "Manual de usuario",
     "manualHeading": "Manual de usuario",
