@@ -35,9 +35,7 @@
     "emptyDesc": "Explora productos y pulsa Seleccionar para agregarlos aquí.",
     "browseProducts": "Explorar productos",
     "remove": "Quitar",
-    "contactWhatsapp": "Contactar por WhatsApp",
-    "orReview": "O revisa en la",
-    "cartPage": "página del carrito"
+    "contactWhatsapp": "Contactar por WhatsApp"
   },
   "selectionBar": {
     "selection": "Selección",
@@ -60,19 +58,6 @@
     "sortPriceDesc": "Precio: de mayor a menor",
     "searchPlaceholder": "Buscar productos...",
     "empty": "No hay productos que coincidan con tus filtros. Prueba limpiar características o ajustar la búsqueda."
-  },
-  "cartPage": {
-    "emptyTitle": "Tu carrito está vacío",
-    "emptyDesc": "Agrega artículos desde una página de producto — la barra superior y el pie de página también se mantienen aquí.",
-    "browseProducts": "Explorar productos",
-    "qty": "Cant.",
-    "remove": "Quitar",
-    "clear": "Vaciar carrito",
-    "summary": "Resumen",
-    "item": "artículo",
-    "items": "artículos",
-    "subtotal": "Subtotal",
-    "checkoutDemo": "Pagar (demo)"
   },
   "productDetail": {
     "description": "Descripción del producto",
