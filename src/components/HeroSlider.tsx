@@ -98,8 +98,9 @@ export function HeroSlider() {
   const slide = slides[index] ?? slides[0];
 
   return (
-    <section className="relative min-h-[min(100vh,640px)] w-full bg-[#0a1628]">
-      <div className="absolute inset-0">
+    <section className="relative z-40 isolate min-h-[480px] w-full bg-[#0a1628] sm:min-h-[min(100vh,640px)]">
+      {/* Overflow only on the image stack — no section scroll; floating bar stays uncropped */}
+      <div className="absolute inset-0 overflow-hidden">
         {slides.map((s, i) => (
           <div
             key={`${locale}-${s.title}-${i}`}
@@ -112,7 +113,7 @@ export function HeroSlider() {
               src={s.image}
               alt=""
               fill
-              className="object-cover object-center sm:object-right"
+              className="object-cover object-[center_22%] sm:object-[center_30%] sm:object-right"
               sizes="100vw"
               priority={i === 0}
             />
@@ -120,48 +121,49 @@ export function HeroSlider() {
         ))}
       </div>
 
+      {/* Mobile: stronger bottom + left readability; desktop: left-to-right sweep */}
       <div
-        className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/80 via-black/55 to-black/10 sm:via-black/40 sm:to-transparent"
+        className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-black/50 via-black/40 to-black/80 sm:bg-gradient-to-r sm:from-black/80 sm:via-black/45 sm:to-transparent"
         aria-hidden
       />
 
-      <div className="relative z-[3] mx-auto flex min-h-[min(100vh,640px)] max-w-6xl flex-col justify-center px-4 pb-28 pt-16 sm:px-6 sm:pb-32 lg:px-6 lg:pb-36 lg:pt-20">
+      <div className="relative z-[3] mx-auto flex min-h-[480px] max-w-6xl flex-col justify-start gap-8 px-4 pb-40 pt-14 sm:min-h-[min(100vh,640px)] sm:justify-center sm:gap-0 sm:px-6 sm:pb-32 sm:pt-16 lg:px-6 lg:pb-36 lg:pt-20">
         <div className="max-w-xl">
-          <h1 className="text-2xl font-bold uppercase leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
+          <h1 className="text-balance break-words text-xl font-bold uppercase leading-[1.15] tracking-tight text-white sm:text-3xl lg:text-4xl">
             {slide.title}
           </h1>
-          <p className="mt-4 text-sm font-normal leading-relaxed text-white/90 sm:text-base">
+          <p className="mt-3 text-sm font-normal leading-relaxed text-white/90 sm:mt-4 sm:text-base">
             {slide.subtitle}
           </p>
-          <div className="mt-8 grid grid-cols-1 gap-x-10 gap-y-2 sm:grid-cols-2">
-            <ul className="space-y-2 text-sm text-white/95">
+          <div className="mt-6 grid grid-cols-1 gap-x-10 gap-y-2 sm:mt-8 sm:grid-cols-2">
+            <ul className="space-y-2 text-sm leading-snug text-white/95">
               {slide.col1.map((item) => (
                 <li key={item} className="flex gap-2">
                   <CheckIcon />
-                  <span>{item}</span>
+                  <span className="min-w-0">{item}</span>
                 </li>
               ))}
             </ul>
-            <ul className="space-y-2 text-sm text-white/95">
+            <ul className="space-y-2 text-sm leading-snug text-white/95">
               {slide.col2.map((item) => (
                 <li key={item} className="flex gap-2">
                   <CheckIcon />
-                  <span>{item}</span>
+                  <span className="min-w-0">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <Link
               href={slide.ctaHref}
-              className="inline-flex h-11 items-center justify-center rounded-full bg-[#003399] px-8 text-sm font-semibold text-white shadow-sm transition hover:bg-[#00287a]"
+              className="inline-flex h-11 w-full items-center justify-center rounded-full bg-[#003399] px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-[#00287a] sm:w-auto sm:px-8"
             >
               {t("heroSlider.learnMore")}
             </Link>
           </div>
         </div>
 
-        <div className="mt-12 flex items-center justify-end gap-3 sm:absolute sm:bottom-10 sm:right-6 sm:mt-0 lg:right-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
+        <div className="mt-8 flex w-full max-w-xl items-center justify-between gap-3 sm:absolute sm:bottom-10 sm:right-6 sm:mt-0 sm:w-auto sm:max-w-none sm:justify-end lg:right-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
           <button
             type="button"
             onClick={() => go(-1)}
