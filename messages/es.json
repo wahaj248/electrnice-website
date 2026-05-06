@@ -142,6 +142,86 @@
     "title": "Últimas guías y consejos",
     "readMore": "Leer más"
   },
+  "blog": {
+    "breadcrumbHome": "Inicio",
+    "breadcrumbBlog": "Blog",
+    "tocTitle": "Tabla de contenidos",
+    "indexTitle": "Blog",
+    "indexSubtitle": "Guías y artículos",
+    "readArticle": "Leer artículo"
+  },
+  "blogPosts": {
+    "hyundaiVsSamsung": {
+      "metaTitle": "Smart TV Hyundai vs. Samsung en RD: guía 2026",
+      "metaDescription": "Comparativa en República Dominicana: Google TV vs Tizen, imagen, sonido, precios y garantía. Decidí cuál Smart TV conviene este 2026.",
+      "heroEyebrow": "Guía de compra",
+      "heroTitle": "Smart TV Hyundai vs. Samsung en RD: ¿cuál comprar este 2026?",
+      "toc": {
+        "introduccion": "Introducción",
+        "cualEsMejor": "¿Cuál es mejor?",
+        "googleTvVsTizen": "Google TV vs Tizen OS",
+        "calidadImagen": "Calidad de imagen",
+        "sonido": "Sonido",
+        "tamanos": "Tamaños recomendados",
+        "precios": "Comparativa de precios",
+        "garantia": "Garantía y soporte",
+        "veredicto": "Veredicto final"
+      },
+      "intro": {
+        "p1": "Elegir un Smart TV en República Dominicana ya no se trata solo del tamaño de la pantalla: importan el sistema operativo, las apps que vas a usar cada día, la calidad HDR en salas claras u oscuras y el soporte local cuando necesitás servicio. Hyundai y Samsung son dos marcas muy presentes en el mercado, pero apuntan a experiencias distintas.",
+        "p2": "En esta guía comparás Hyundai frente a Samsung con foco práctico para RD: qué ofrece cada plataforma inteligente, cómo se comporta la imagen en contenido 4K y streaming, el audio integrado, rangos de tamaño recomendados por habitación, una mirada realista a precios y qué esperar de garantía y respaldo."
+      },
+      "cualEsMejor": {
+        "h2": "Smart TV Hyundai vs. Samsung: ¿cuál es mejor?",
+        "p1": "No hay un ganador único: depende de tu presupuesto, del ecosistema que ya usás (Android/Google vs Samsung) y de cuánto valorás extras como gaming de baja latencia o integración con el hogar conectado.",
+        "p2": "Hyundai suele destacar por una propuesta de valor fuerte en relación precio‑calidad y por Google TV, con acceso amplio a apps y recomendaciones personalizadas. Samsung lidera en gama alta con paneles QLED/OLED según línea, Tizen muy pulido y amplio ecosistema de accesorios. Para RD, conviene contrastar siempre disponibilidad del modelo, instalación y políticas del distribuidor autorizado."
+      },
+      "googleTv": {
+        "h2": "Google TV vs Tizen OS",
+        "p1": "El sistema define cómo navegás apps, buscás contenido con la voz y actualizás el televisor en el tiempo.",
+        "h3Hyundai": "Hyundai (Google TV)",
+        "hyundaiLi1": "Experiencia cercana a Android TV/Google TV: Play Store, Chromecast integrado y cuenta Google.",
+        "hyundaiLi2": "Buena integración con YouTube, Netflix y servicios Google; buscador unificado de contenido.",
+        "hyundaiLi3": "Ideal si ya usás Drive, Fotos o Asistente en otros dispositivos.",
+        "h3Samsung": "Samsung (Tizen OS)",
+        "samsungLi1": "Interfaz propia Tizen, muy optimizada para controles Samsung y barra de apps rápida.",
+        "samsungLi2": "Galaxy ecosystem y apps populares; Gaming Hub en modelos compatibles.",
+        "samsungLi3": "Menos parecido a Android “puro”; algunas apps pueden llegar en distinto orden que en Google TV.",
+        "p2": "Si preferís la tienda y flujo de Google, Hyundai suele sentirse más familiar. Si priorizás la experiencia Samsung de punta a punta, Tizen encaja mejor."
+      },
+      "imagen": {
+        "h2": "Calidad de imagen del Smart TV Hyundai vs. Samsung",
+        "h3Resolucion": "Resolución y panel",
+        "p1": "En ambas marcas vas a encontrar Full HD y 4K UHD según modelo. Samsung destaca en gamas altas con tecnologías premium (Neo QLED, OLED en ciertas líneas). Hyundai compite muy bien en 4K HDR para uso diario: series, deportes y películas en streaming.",
+        "p2": "Para RD, revisá brillo en salas muy iluminadas (HDR, contraste) y movimiento en deportes (MEMC según modelo). Pedí una demo en tienda con el mismo tipo de contenido que ves en casa."
+      },
+      "sonido": {
+        "h2": "Sonido",
+        "p1": "Los televisores delgados tienen límites físicos; Hyundai y Samsung incorporan mejoras digitales ( Dolby en modelos compatibles, salida óptica/HDMI ARC o eARC ).",
+        "p2": "Si escuchás mucho cine o música, una barra de sonido suma en cualquier marca. Compará potencia nominal y si el modelo soporta passthrough de audio para tu equipo."
+      },
+      "tamanos": {
+        "h2": "Tamaños recomendados",
+        "p1": "Regla práctica: medí la distancia desde el sofá a la pantalla. Para 4K, muchos usuarios se sienten cómodos entre 1,2 y 1,5 veces la diagonal en metros — siempre ajustá a tu gusto.",
+        "p2": "Para dormitorios pequeños, 43\" suele ser un buen punto medio; salas amplias suelen pedir 55\"–65\" o más. Verificá que el mueble soporte el peso y que tengas tomacorrientes y cableado ordenados."
+      },
+      "precios": {
+        "h2": "Comparativa de precios",
+        "p1": "Samsung suele ubicarse más alto en gamas flagship; Hyundai ofrece competitividad fuerte en precio según serie y tamaño. Los valores cambian por promociones, temporada y canal (tienda física vs online).",
+        "p2": "Antes de comprar en RD, compará bundles (instalación, barra de sonido), garantía extendida y financiamiento. El mejor precio es el que incluye respaldo claro posventa."
+      },
+      "garantia": {
+        "h2": "Garantía y soporte",
+        "p1": "La garantía legal y comercial depende del distribuidor y del país; conservá factura y datos del equipo. Preguntá tiempos de respuesta de servicio técnico en tu ciudad.",
+        "p2": "Tanto Hyundai como Samsung requieren instalación cuidadosa y ventilación adecuada del soporte mural; seguí siempre el manual para no afectar cobertura."
+      },
+      "veredicto": {
+        "h2": "Veredicto final",
+        "p1": "Elegí Hyundai si buscás excelente relación precio‑calidad y una experiencia Google TV integrada para streaming diario. Elegí Samsung si tu prioridad es la gama más alta de imagen y el ecosistema Tizen/Galaxy sin compromisos.",
+        "p2": "Para RD 2026, cerrá tu decisión en tienda: mirá la misma película o deporte en ambos, probá el control por voz y confirmá stock, garantía local y soporte. Así comprás según tu sala, tu presupuesto y tu forma de ver contenido — no solo por la marca del logo."
+      }
+    }
+  },
   "faqPage": {
     "backHome": "← Volver al inicio",
     "title": "Preguntas frecuentes - Todo lo que necesitas saber",

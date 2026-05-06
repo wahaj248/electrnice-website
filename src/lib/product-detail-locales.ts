@@ -449,6 +449,74 @@ const EN: Record<string, LocalizedProductDetail> = {
       { label: "Warranty", value: "1 year" },
     ],
   },
+  "ac-18k-inverter-hy18k232ivgf": {
+    name: "HYUNDAI Appliances Inverter 18,000 BTU Split Air Conditioner White — HY18K232IVGF",
+    shortDescription:
+      "18,000 BTU inverter split with Wi‑Fi, R32 refrigerant, silver-ion antibacterial filter, Golden Fin protection, and a refined white finish for indoor and outdoor units.",
+    description:
+      "Model HY18K232IVGF is a HYUNDAI Appliances inverter split system engineered for steady comfort and efficient operation. Inverter technology modulates output to track your setpoint, while Wi‑Fi adds convenient control from your phone. The package includes indoor and outdoor units with a hidden digital display, easy-clean silver-ion antibacterial filter, programmable timer, auto restart, LED display, and fan speeds from Low through Turbo. Golden Fin anti-corrosive treatment and copper piping help protect the outdoor circuit for long-term reliability.",
+    sku: "HY18K232IVGF",
+    longIntro:
+      "The HYUNDAI Appliances HY18K232IVGF inverter split air conditioner combines 18,000 BTU cooling capacity with modern convenience features. Inverter modulation helps maintain a stable indoor temperature with efficient energy use compared to basic on/off cycles, while integrated Wi‑Fi connectivity makes it easier to adjust schedules and comfort from your smartphone. Indoor air quality is supported by an easy-clean filter with silver-ion antibacterial treatment, and daily operation is simpler with a programmable timer, auto restart after power interruptions, and flexible airflow speeds including Turbo when you need a quick cool-down. The outdoor side is built for durability with Golden Fin anti-corrosive coating and copper piping — a practical choice for homeowners who want dependable inverter performance in a clean white design.",
+    manualFileLabel: "Download PDF (spec sheet)",
+    specs: [
+      { label: "Brand", value: "HYUNDAI Appliances" },
+      { label: "Model", value: "HY18K232IVGF" },
+      { label: "UPC", value: "7707138032561" },
+      { label: "Cooling capacity", value: "18,000 BTU" },
+      { label: "Voltage / frequency", value: "220V · 60Hz" },
+      { label: "Refrigerant", value: "R32" },
+      { label: "SEER (sheet)", value: "18 (USA / Central America / Caribbean regions)" },
+      { label: "Technology", value: "Inverter · Wi‑Fi" },
+      { label: "Indoor unit (W×H×D)", value: "910 × 294 × 206 mm" },
+      { label: "Outdoor unit (W×H×D)", value: "795 × 305 × 549 mm" },
+      { label: "Net weight (outdoor / indoor)", value: "23 kg / 9 kg" },
+      { label: "Gross weight (outdoor / indoor)", value: "27 kg / 12 kg" },
+      { label: "Country of origin", value: "China" },
+      { label: "Key features", value: "Silver-ion filter · Golden Fin · easy-clean filter · auto restart · timer · LED display" },
+      { label: "Compressor", value: "Rotary scroll" },
+      { label: "Fan speeds", value: "Low · Medium · High · Auto · Turbo" },
+      { label: "Accessories (sheet)", value: "User manual · installation kit · remote · adhesive tape" },
+      { label: "Loading (40 HQ)", value: "240 sets" },
+      { label: "Color", value: "White" },
+      { label: "Warranty", value: "Refer to retailer / regional policy" },
+    ],
+  },
+  "ac-12k-inverter-hy12k232ivgf": {
+    name: "HYUNDAI Appliances Inverter 12,000 BTU Split Air Conditioner White — HY12K232IVGF",
+    shortDescription:
+      "12,000 BTU inverter split with Wi‑Fi, R32 refrigerant, digital control, rotary scroll compressor, anti-corrosive coating, and energy efficiency class B.",
+    description:
+      "Model HY12K232IVGF is a HYUNDAI Appliances inverter split system rated at 12,000 BTU. Inverter operation helps maintain a more stable indoor temperature, while Wi‑Fi and digital control add convenient access to settings. The outdoor circuit benefits from anti-corrosive treatment, and the rotary scroll compressor supports efficient, dependable performance — all in a white indoor/outdoor package.",
+    sku: "HY12K232IVGF",
+    longIntro:
+      "The HYUNDAI Appliances HY12K232IVGF inverter split air conditioner is designed for homes that want efficient cooling with connected convenience. At 12,000 BTU, it targets medium-sized rooms while inverter modulation reduces the harsh on/off cycling common to basic systems. Wi‑Fi connectivity makes it easier to adjust temperature and schedules from your phone, and digital control on the indoor unit keeps operation straightforward. R32 refrigerant aligns with common modern split-system practice, and the listed energy efficiency class B gives a clear reference point on the datasheet. With anti-corrosive protection on outdoor-side components and a rotary scroll compressor, HY12K232IVGF is built as a practical, specification-forward choice in a clean white design.",
+    manualFileLabel: "Download PDF (spec sheet)",
+    specs: [
+      { label: "Brand", value: "HYUNDAI Appliances" },
+      { label: "Model", value: "HY12K232IVGF" },
+      { label: "UPC", value: "7707138049699" },
+      { label: "Cooling capacity", value: "12,000 BTU" },
+      { label: "Voltage / frequency", value: "220V · 60Hz" },
+      { label: "Refrigerant", value: "R32" },
+      { label: "Energy efficiency (sheet)", value: "Class B" },
+      { label: "Technology", value: "Inverter · Wi‑Fi" },
+      { label: "Digital control", value: "Yes" },
+      { label: "Units", value: "Indoor + outdoor (split)" },
+      { label: "Indoor unit (W×H×D)", value: "770 × 270 × 195 mm" },
+      { label: "Outdoor unit (W×H×D)", value: "720 × 270 × 455 mm" },
+      { label: "Indoor carton (W×H×D)", value: "840 × 340 × 265 mm" },
+      { label: "Outdoor carton (W×H×D)", value: "765 × 315 × 495 mm" },
+      { label: "Net weight (indoor / outdoor)", value: "7.33 kg / 18.88 kg" },
+      { label: "Gross weight (indoor / outdoor)", value: "9.56 kg / 21.95 kg" },
+      { label: "Country of origin", value: "China" },
+      { label: "Compressor", value: "Rotary scroll" },
+      { label: "Anti-corrosive coating", value: "Yes" },
+      { label: "Accessories (sheet)", value: "Remote · user manual · warranty · installation kit" },
+      { label: "Color", value: "White" },
+      { label: "Warranty", value: "Refer to retailer / regional policy" },
+    ],
+  },
 };
 
 const ES: Record<string, LocalizedProductDetail> = {
@@ -888,13 +956,81 @@ const ES: Record<string, LocalizedProductDetail> = {
       { label: "Garantía", value: "1 año" },
     ],
   },
+  "ac-18k-inverter-hy18k232ivgf": {
+    name: "Aire acondicionado split inverter HYUNDAI Appliances 18.000 BTU Blanco — HY18K232IVGF",
+    shortDescription:
+      "Split inverter de 18.000 BTU con Wi‑Fi, refrigerante R32, filtro antibacterial con iones de plata, protección Golden Fin y acabado blanco en unidad interior y exterior.",
+    description:
+      "El modelo HY18K232IVGF es un sistema split inverter HYUNDAI Appliances pensado para un confort estable y un consumo más eficiente. La tecnología Inverter modula el rendimiento según la temperatura deseada y el Wi‑Fi integrado facilita el control desde el smartphone. La unidad interior incluye pantalla digital oculta, filtro fácil de limpiar con tratamiento antibacterial de iones de plata, temporizador programable, arranque automático, pantalla LED y velocidades de ventilación que incluyen Turbo. La unidad exterior incorpora recubrimiento anticorrosivo Golden Fin y tubería de cobre para mayor durabilidad.",
+    sku: "HY18K232IVGF",
+    longIntro:
+      "El aire acondicionado split inverter HYUNDAI Appliances HY18K232IVGF ofrece 18.000 BTU de capacidad de enfriamiento con el confort que aporta la tecnología Inverter: ajusta el trabajo del equipo para mantener la temperatura de forma más estable y con un uso energético más eficiente que muchos sistemas encendido/apagado tradicionales. El Wi‑Fi integrado permite gestionar horarios y confort desde el móvil con mayor comodidad. En la unidad interior, el filtro fácil de limpiar con iones de plata ayuda a cuidar la calidad del aire, mientras que funciones como temporizador programable, arranque automático y múltiples velocidades (incluida Turbo) simplifican el día a día. En el exterior, el acabado Golden Fin y la tubería de cobre apuntan a una mayor resistencia a la corrosión y un circuito más robusto. Es una opción sólida para quienes buscan un split inverter moderno, conectado y con especificaciones claras de ficha técnica.",
+    manualFileLabel: "Descargar PDF (ficha técnica)",
+    specs: [
+      { label: "Marca", value: "HYUNDAI Appliances" },
+      { label: "Modelo", value: "HY18K232IVGF" },
+      { label: "UPC", value: "7707138032561" },
+      { label: "Capacidad de enfriamiento", value: "18.000 BTU" },
+      { label: "Tensión / frecuencia", value: "220V · 60Hz" },
+      { label: "Refrigerante", value: "R32" },
+      { label: "SEER (ficha)", value: "18 (regiones EE. UU., Centroamérica y Caribe)" },
+      { label: "Tecnología", value: "Inverter · Wi‑Fi" },
+      { label: "Unidad interior (An×Al×Pr)", value: "910 × 294 × 206 mm" },
+      { label: "Unidad exterior (An×Al×Pr)", value: "795 × 305 × 549 mm" },
+      { label: "Peso neto (ext. / int.)", value: "23 kg / 9 kg" },
+      { label: "Peso bruto (ext. / int.)", value: "27 kg / 12 kg" },
+      { label: "País de origen", value: "China" },
+      { label: "Funciones destacadas", value: "Filtro con iones de plata · Golden Fin · filtro fácil de limpiar · arranque automático · temporizador · pantalla LED" },
+      { label: "Compresor", value: "Rotativo de espiral" },
+      { label: "Velocidades", value: "Baja · Media · Alta · Auto · Turbo" },
+      { label: "Accesorios (ficha)", value: "Manual de usuario · kit de instalación · control remoto · cinta adhesiva" },
+      { label: "Carga (40 HQ)", value: "240 equipos" },
+      { label: "Color", value: "Blanco" },
+      { label: "Garantía", value: "Consultar política del distribuidor / región" },
+    ],
+  },
+  "ac-12k-inverter-hy12k232ivgf": {
+    name: "Aire acondicionado split inverter HYUNDAI Appliances 12.000 BTU Blanco — HY12K232IVGF",
+    shortDescription:
+      "Split inverter de 12.000 BTU con Wi‑Fi, refrigerante R32, control digital, compresor rotativo de espiral, recubrimiento anticorrosivo y eficiencia energética clase B.",
+    description:
+      "El modelo HY12K232IVGF es un sistema split inverter HYUNDAI Appliances de 12.000 BTU. El funcionamiento Inverter ayuda a mantener una temperatura más estable, mientras que el Wi‑Fi y el control digital facilitan el uso diario. La unidad exterior incorpora protección anticorrosiva y el compresor rotativo de espiral aporta un rendimiento eficiente, con acabado blanco en ambas unidades.",
+    sku: "HY12K232IVGF",
+    longIntro:
+      "El aire acondicionado split inverter HYUNDAI Appliances HY12K232IVGF está pensado para quienes buscan confort eficiente con control conectado. Con 12.000 BTU, es una opción adecuada para ambientes medianos, y la tecnología Inverter modula el trabajo del equipo para reducir el típico ciclo encendido/apagado de equipos convencionales. El Wi‑Fi integrado permite ajustar temperatura y horarios desde el smartphone, y el control digital en la unidad interior simplifica la operación. El refrigerante R32 es una elección habitual en equipos split modernos, y la clase energética B indicada en ficha ofrece una referencia clara. El recubrimiento anticorrosivo en la parte exterior y el compresor rotativo de espiral refuerzan la idea de un equipo práctico y bien especificado, con estética blanca limpia.",
+    manualFileLabel: "Descargar PDF (ficha técnica)",
+    specs: [
+      { label: "Marca", value: "HYUNDAI Appliances" },
+      { label: "Modelo", value: "HY12K232IVGF" },
+      { label: "UPC", value: "7707138049699" },
+      { label: "Capacidad de enfriamiento", value: "12.000 BTU" },
+      { label: "Tensión / frecuencia", value: "220V · 60Hz" },
+      { label: "Refrigerante", value: "R32" },
+      { label: "Eficiencia energética (ficha)", value: "Clase B" },
+      { label: "Tecnología", value: "Inverter · Wi‑Fi" },
+      { label: "Control digital", value: "Sí" },
+      { label: "Unidades", value: "Interna y externa (split)" },
+      { label: "Unidad interior (An×Al×Pr)", value: "770 × 270 × 195 mm" },
+      { label: "Unidad exterior (An×Al×Pr)", value: "720 × 270 × 455 mm" },
+      { label: "Caja interior (An×Al×Pr)", value: "840 × 340 × 265 mm" },
+      { label: "Caja exterior (An×Al×Pr)", value: "765 × 315 × 495 mm" },
+      { label: "Peso neto (int. / ext.)", value: "7,33 kg / 18,88 kg" },
+      { label: "Peso bruto (int. / ext.)", value: "9,56 kg / 21,95 kg" },
+      { label: "País de origen", value: "China" },
+      { label: "Compresor", value: "Rotativo de espiral" },
+      { label: "Recubrimiento anticorrosivo", value: "Sí" },
+      { label: "Accesorios (ficha)", value: "Control remoto · manual de usuario · garantía · kit de instalación" },
+      { label: "Color", value: "Blanco" },
+      { label: "Garantía", value: "Consultar política del distribuidor / región" },
+    ],
+  },
 };
 
 export const PRODUCT_DETAIL_LOCALES: Record<"en" | "es", Record<string, LocalizedProductDetail>> =
   { en: EN, es: ES };
 
 export function resolveLocaleFromCookie(raw: string | undefined): "en" | "es" {
-  return raw === "es" ? "es" : "en";
+  return raw === "en" ? "en" : "es";
 }
 
 export function getLocalizedProductDetail(

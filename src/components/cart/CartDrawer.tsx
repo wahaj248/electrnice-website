@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useCart } from "@/context/CartContext";
 import { useCartUi } from "@/context/CartUiContext";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, WHATSAPP_URL } from "@/lib/whatsapp";
 import { getProductById, resolveImageSrc } from "@/lib/products";
 
 function CloseIcon() {
@@ -56,6 +56,7 @@ export function CartDrawer() {
   const { open, closeCart } = useCartUi();
   const { lines, setQuantity, removeItem, itemCount } = useCart();
   const t = useTranslations();
+  const [origin, setOrigin] = useState<string>("");
 
   useEffect(() => {
     if (!open) return;
@@ -74,6 +75,11 @@ export function CartDrawer() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setOrigin(window.location.origin);
+  }, []);
+
   const items = useMemo(() => {
     return lines.flatMap((l) => {
       const p = getProductById(l.productId);
@@ -89,6 +95,21 @@ export function CartDrawer() {
       ];
     });
   }, [lines]);
+
+  const cartWhatsAppUrl = useMemo(() => {
+    if (items.length === 0) return WHATSAPP_URL;
+    if (!origin) return WHATSAPP_URL;
+
+    const list = items
+      .map((it, idx) => {
+        const link = `${origin}/products/${it.id}`;
+        return `${idx + 1}) ${it.name} — Qty: ${it.quantity}\n${link}`;
+      })
+      .join("\n\n");
+
+    const message = `Hi, I want to order these products:\n\n${list}`;
+    return buildWhatsAppUrl(message);
+  }, [items, origin]);
 
   return (
     <div
@@ -205,7 +226,7 @@ export function CartDrawer() {
 
           <div className="border-t border-zinc-200 p-5">
             <a
-              href={WHATSAPP_URL}
+              href={cartWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#25D366] text-sm font-semibold text-white shadow-sm transition hover:bg-[#1ebe57]"
