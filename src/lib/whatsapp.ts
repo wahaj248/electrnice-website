@@ -1,5 +1,5 @@
 /** E.164 digits only (no +), used by wa.me links */
-export const WHATSAPP_PHONE = "12101231230";
+export const WHATSAPP_PHONE = "18098191153";
 
 export function buildWhatsAppUrl(message: string): string {
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;

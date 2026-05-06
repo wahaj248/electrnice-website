@@ -400,6 +400,44 @@ export const products: Product[] = [
       "/images/HY11INV-6000FCW-6_N.jpg",
     ],
   },
+  {
+    id: "ac-18k-inverter-hy18k232ivgf",
+    name: "HYUNDAI Appliances Inverter 18,000 BTU Split Air Conditioner White — HY18K232IVGF",
+    price: 118999,
+    image: "/images/split.PNG",
+    shortDescription:
+      "18,000 BTU inverter split system with Wi‑Fi, R32 refrigerant, silver-ion antibacterial filter, Golden Fin protection, and a clean white indoor/outdoor design.",
+    description:
+      "The HYUNDAI Appliances inverter split air conditioner (model HY18K232IVGF) delivers 18,000 BTU cooling capacity with efficient inverter modulation, Wi‑Fi connectivity for smarter control, and R32 refrigerant. The indoor unit features a hidden digital display, easy-clean filter with silver-ion antibacterial treatment, programmable timer, auto restart, and multi fan speeds including Turbo. The outdoor unit is built with anti-corrosive Golden Fin coating and copper piping for durable performance — ideal for reliable comfort in demanding climates.",
+    category: "ACs",
+    catalogFeatures: [
+      "Inverter · 18,000 BTU",
+      "Model HY18K232IVGF",
+      "Wi‑Fi · R32",
+      "Silver-ion filter · Golden Fin",
+      "220V · White",
+    ],
+    gallery: ["/images/split.PNG", "/images/outer.PNG"],
+  },
+  {
+    id: "ac-12k-inverter-hy12k232ivgf",
+    name: "HYUNDAI Appliances Inverter 12,000 BTU Split Air Conditioner White — HY12K232IVGF",
+    price: 99999,
+    image: "/images/split.PNG",
+    shortDescription:
+      "12,000 BTU inverter split with Wi‑Fi, R32 refrigerant, digital control, rotary scroll compressor, anti-corrosive coating, and energy efficiency class B.",
+    description:
+      "The HYUNDAI Appliances inverter split air conditioner (model HY12K232IVGF) delivers 12,000 BTU cooling capacity with inverter modulation for steadier comfort. Wi‑Fi connectivity and digital control simplify everyday use, while R32 refrigerant and class B energy efficiency support a modern refrigerant choice. The system includes indoor and outdoor units with rotary scroll compressor technology and anti-corrosive protection on key outdoor components — in a clean white finish.",
+    category: "ACs",
+    catalogFeatures: [
+      "Inverter · 12,000 BTU",
+      "Model HY12K232IVGF",
+      "Wi‑Fi · R32",
+      "Digital control · Class B",
+      "220V · White",
+    ],
+    gallery: ["/images/split.PNG"],
+  },
 ];
 
 export const catalogProducts = products;

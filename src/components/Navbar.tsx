@@ -38,7 +38,7 @@ export function Navbar() {
   const { itemCount } = useCart();
   const { openCart } = useCartUi();
   const t = useTranslations();
-  const [locale, setLocale] = useState<"en" | "es">("en");
+  const [locale, setLocale] = useState<"en" | "es">("es");
 
   function setLocaleCookie(locale: "en" | "es") {
     const oneYear = 60 * 60 * 24 * 365;

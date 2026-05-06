@@ -30,7 +30,7 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies();
   const rawLocale = cookieStore.get("NEXT_LOCALE")?.value;
-  const locale = rawLocale === "es" ? "es" : "en";
+  const locale = rawLocale === "en" ? "en" : "es";
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
   return (
