@@ -26,7 +26,7 @@ export function FloatingSelectionBar({ variant = "hero" }: FloatingSelectionBarP
   const positionClass =
     variant === "fixed"
       ? "pointer-events-none fixed bottom-6 left-0 right-0 z-40 flex justify-center px-4"
-      : "pointer-events-none absolute -bottom-8 left-0 right-0 z-[5] flex justify-center px-4";
+      : "pointer-events-none absolute -bottom-8 left-0 right-0 z-[60] flex justify-center px-4";
 
   return (
     <div className={positionClass}>
