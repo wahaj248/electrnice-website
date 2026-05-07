@@ -11,7 +11,23 @@ const nav = [
   { href: "/", label: "Home" },
   { href: "/tvs", label: "TVs" },
   { href: "/acs", label: "ACs" },
+  { href: "/blog", label: "Blog" },
 ];
+
+function translateNavLabel(t: (key: string) => string, label: string) {
+  switch (label) {
+    case "Home":
+      return t("nav.home");
+    case "TVs":
+      return t("nav.tvs");
+    case "ACs":
+      return t("nav.acs");
+    case "Blog":
+      return t("nav.blog");
+    default:
+      return label;
+  }
+}
 
 function MenuIcon({ open }: { open: boolean }) {
   return (
@@ -94,8 +110,7 @@ export function Navbar() {
               href === "/"
                 ? pathname === "/"
                 : pathname === href || pathname.startsWith(`${href}/`);
-            const translated =
-              label === "Home" ? t("nav.home") : label === "TVs" ? t("nav.tvs") : t("nav.acs");
+            const translated = translateNavLabel(t, label);
             return (
               <Link
                 key={href}
@@ -184,7 +199,7 @@ export function Navbar() {
                   className={`block py-3 text-base font-medium ${linkClass(href)}`}
                   onClick={() => setMenuOpen(false)}
                 >
-                  {label === "Home" ? t("nav.home") : label === "TVs" ? t("nav.tvs") : t("nav.acs")}
+                  {translateNavLabel(t, label)}
                 </Link>
               </li>
             ))}
