@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
+import { CtaReadySection } from "@/components/CtaReadySection";
 import type { BlogBlock } from "@/lib/blog-content";
 import {
   blogPosts,
@@ -221,6 +222,8 @@ export default async function BlogPostPage({ params }: Props) {
           </article>
         </div>
       </div>
+
+      <CtaReadySection />
     </div>
   );
 }
