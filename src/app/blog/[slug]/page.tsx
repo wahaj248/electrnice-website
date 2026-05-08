@@ -175,7 +175,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </header>
 
-      {/* <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-[minmax(200px,260px)_1fr] lg:gap-14 xl:gap-16">
           <aside className="lg:sticky lg:top-28 lg:self-start">
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-zinc-900">
@@ -220,7 +220,7 @@ export default async function BlogPostPage({ params }: Props) {
             ))}
           </article>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
