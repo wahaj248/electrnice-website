@@ -386,7 +386,7 @@ export const products: Product[] = [
   //   description:
   //     "The HYUNDAI Inverter HY11INV-6000FCW combines 6400 W capacity with connected convenience — Inverter modulation keeps temperatures steady, Wi‑Fi adds remote scheduling, and advanced filtration supports cleaner indoor air in a refined white cabinet.",
   //   category: "ACs",
-  //   catalogFeatures: [
+  //   catalogFeatures: [ss
   //     "Inverter · 6400 W · Wi‑Fi",
   //     "Model HY11INV-6000FCW",
   //     "Cooling & heating",
