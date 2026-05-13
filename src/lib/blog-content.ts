@@ -31,13 +31,11 @@ export type BlogPost = {
   en: BlogContent;
 };
 
-const BLOG_IMAGE = "/blogimg/blog1.png";
-
 export const blogPosts: BlogPost[] = [
   // ───────────────────────────── BLOG 1 ─────────────────────────────
   {
     slug: "smart-tv-hyundai-rd-guia-2026",
-    image: BLOG_IMAGE,
+    image: "/blog/Blog 1/HY_BLOG1.1.png",
     es: {
       category: "Guía de compra",
       title:
@@ -405,7 +403,7 @@ export const blogPosts: BlogPost[] = [
   // ───────────────────────────── BLOG 2 ─────────────────────────────
   {
     slug: "hyundai-vs-samsung-smart-tv-rd",
-    image: BLOG_IMAGE,
+    image: "/blog/Blog 2/HY_BLOG2.1.png",
     es: {
       category: "Comparativa",
       title: "Smart TV Hyundai vs. Samsung en RD: ¿cuál comprar este 2026?",
@@ -787,7 +785,7 @@ export const blogPosts: BlogPost[] = [
   // ───────────────────────────── BLOG 3 ─────────────────────────────
   {
     slug: "mejor-smart-tv-hyundai-rd-2026",
-    image: BLOG_IMAGE,
+    image: "/blog/Blog 3/HY_BLOG3.1.png",
     es: {
       category: "Guía 2026",
       title:
@@ -1108,7 +1106,7 @@ export const blogPosts: BlogPost[] = [
   // ───────────────────────────── BLOG 4 ─────────────────────────────
   {
     slug: "google-tv-configuracion-hyundai",
-    image: BLOG_IMAGE,
+    image: "/blog/Blog 04/HY_BLOG4.1.png",
     es: {
       category: "Tutorial",
       title: "Configuración de Google TV en un Smart TV de Hyundai",
@@ -1444,7 +1442,7 @@ export const blogPosts: BlogPost[] = [
   // ───────────────────────────── BLOG 5 ─────────────────────────────
   {
     slug: "smart-tv-hyundai-mas-vendidos-rd",
-    image: BLOG_IMAGE,
+    image: "/blog/Blog 05/HY_BLOG5.1.png",
     es: {
       category: "Top ventas",
       title: "Los Smart TV Hyundai más vendidos en República Dominicana",
@@ -1746,7 +1744,7 @@ export const blogPosts: BlogPost[] = [
   // ───────────────────────────── BLOG 6 ─────────────────────────────
   {
     slug: "smart-tv-hyundai-ofertas-2026",
-    image: BLOG_IMAGE,
+    image: "/blog/Blog 06/HY_BLOG6.1.png",
     es: {
       category: "Ofertas",
       title:
