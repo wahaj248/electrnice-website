@@ -186,7 +186,7 @@ export function CartDrawer() {
                         <Link
                           href={`/products/${it.id}`}
                           onClick={closeCart}
-                          className="block truncate text-[13px] font-bold leading-snug text-zinc-900 hover:text-[#003399]"
+                          className="block line-clamp-2 text-[13px] font-bold leading-snug text-zinc-900 hover:text-[#003399]"
                         >
                           {it.name}
                         </Link>

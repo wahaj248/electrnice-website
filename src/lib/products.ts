@@ -19,7 +19,7 @@ export const products: Product[] = [
   {
     id: "tv-32-hd",
     name: 'Smart TV HYUNDAI 32" HD Google Android TV Black',
-    price: 18999,
+    price: 9200,
     image: "/images/HYLED-32HD7A-1.jpg",
     shortDescription:
       "Enjoy the best image quality with the HYLED-32HD7A model.",
@@ -43,7 +43,7 @@ export const products: Product[] = [
   {
     id: "tv-43-full-hd",
     name: 'Smart TV HYUNDAI 43" Full HD Google Android TV Black',
-    price: 32999,
+    price: 13500,
     image: "/images/HYLED-43FHD7A-0.jpg",
     shortDescription:
       "Enjoy the best image quality with the HYLED-43FHD7A model.",
@@ -67,7 +67,7 @@ export const products: Product[] = [
   {
     id: "tv-50-4k-uhd",
     name: 'Smart TV HYUNDAI 50" UHD 4K Google Android TV Black',
-    price: 64999,
+    price: 21000,
     image: "/images/HYLED-50UHD7A-1.jpg",
     shortDescription:
       "Enjoy the best image quality with the HYLED-50UHD7A model.",
@@ -91,7 +91,7 @@ export const products: Product[] = [
   {
     id: "tv-58-4k-uhd",
     name: 'Smart TV HYUNDAI 58" UHD 4K Google Android TV Black',
-    price: 104999,
+    price: 25500,
     image: "/images/HYLED-58UHD7A-0.jpg",
     shortDescription:
       "Enjoy the best image quality with the HYLED-58UHD7A model.",
@@ -403,7 +403,7 @@ export const products: Product[] = [
   {
     id: "ac-18k-inverter-hy18k232ivgf",
     name: "HYUNDAI Appliances Inverter 18,000 BTU Split Air Conditioner White — HY18K232IVGF",
-    price: 118999,
+    price: 31500,
     image: "/images/split.PNG",
     shortDescription:
       "18,000 BTU inverter split system with Wi‑Fi, R32 refrigerant, silver-ion antibacterial filter, Golden Fin protection, and a clean white indoor/outdoor design.",
@@ -422,7 +422,7 @@ export const products: Product[] = [
   {
     id: "ac-12k-inverter-hy12k232ivgf",
     name: "HYUNDAI Appliances Inverter 12,000 BTU Split Air Conditioner White — HY12K232IVGF",
-    price: 99999,
+    price: 21500,
     image: "/images/split.PNG",
     shortDescription:
       "12,000 BTU inverter split with Wi‑Fi, R32 refrigerant, digital control, rotary scroll compressor, anti-corrosive coating, and energy efficiency class B.",

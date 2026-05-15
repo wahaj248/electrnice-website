@@ -23,7 +23,7 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="text-xs font-medium uppercase tracking-wide text-sky-600 dark:text-sky-400">
           {product.category}
         </p>
-        <h2 className="mt-1 text-base font-semibold text-zinc-900 dark:text-zinc-50">
+        <h2 className="mt-1 line-clamp-2 text-base font-semibold leading-snug text-zinc-900 dark:text-zinc-50">
           {product.name}
         </h2>
         <p className="mt-1 line-clamp-2 flex-1 text-sm text-zinc-600 dark:text-zinc-400">
