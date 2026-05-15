@@ -66,7 +66,7 @@ export function CatalogProductCard({
       </div>
       <div className="flex flex-1 flex-col px-2 py-4">
         <h3
-          className="text-base font-bold leading-snug sm:text-[17px]"
+          className="line-clamp-2 text-base font-bold leading-snug sm:text-[17px]"
           style={{ color: navy }}
         >
           {product.name}

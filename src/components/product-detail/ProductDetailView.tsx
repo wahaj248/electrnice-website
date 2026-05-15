@@ -392,7 +392,9 @@ export function ProductDetailView({
                       sizes="(max-width: 1024px) 50vw, 25vw"
                     />
                   </div>
-                  <h4 className="mt-4 text-sm font-bold text-zinc-900 sm:text-base">{r.name}</h4>
+                  <h4 className="mt-4 line-clamp-2 text-sm font-bold leading-snug text-zinc-900 sm:text-base">
+                    {r.name}
+                  </h4>
                   <p className="mt-2 line-clamp-2 flex-1 text-xs leading-relaxed text-zinc-600 sm:text-sm">
                     {r.shortDescription}
                   </p>
