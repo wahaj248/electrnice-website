@@ -69,10 +69,10 @@ export function Footer() {
                   </svg>
                 </span>
                 <a
-                  href="mailto:sales@hyundaielectronics.demo"
+                  href="mailto:coordinadorbtcbranchtotal@gmail.com"
                   className="break-all text-zinc-500 transition hover:text-[#003399]"
                 >
-                  sales@hyundaielectronics.demo
+                  coordinadorbtcbranchtotal@gmail.com
                 </a>
               </li>
               <li className="flex gap-3">
@@ -87,10 +87,10 @@ export function Footer() {
                   </svg>
                 </span>
                 <a
-                  href="tel:+15550007777"
+                  href="tel:+18098191153"
                   className="text-zinc-500 transition hover:text-[#003399]"
                 >
-                  +1 (555) 000-7777
+                  +1 (809) 819-1153
                 </a>
               </li>
               <li className="flex gap-3">
@@ -110,7 +110,7 @@ export function Footer() {
                     />
                   </svg>
                 </span>
-                <span className="text-zinc-500">Silicon District, Tech City</span>
+                <span className="text-zinc-500">Plaza Central, Santo Domingo</span>
               </li>
             </ul>
           </div>
