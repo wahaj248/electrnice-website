@@ -90,7 +90,7 @@ export const products: Product[] = [
   },
   {
     id: "tv-58-4k-uhd",
-    name: 'Smart TV HYUNDAI 58" UHD 4K Google Android TV Black',
+    name: 'Smart TV HYUNDAI 55" UHD 4K Google Android TV Black',
     price: 25500,
     image: "/images/HYLED-58UHD7A-0.jpg",
     shortDescription:
