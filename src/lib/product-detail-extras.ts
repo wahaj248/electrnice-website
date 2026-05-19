@@ -48,12 +48,12 @@ export const productDetailExtras: Record<string, ProductDetailExtra> = {
       "The Hyundai HYLED-50UHD7A combines advanced technology with stunning 4K UHD resolution so you can enjoy every detail. Perfect for your home, it features Wi‑Fi connectivity, an Android operating system, and excellent color reproduction for an immersive viewing experience.",
     manualFileLabel: "Download PDF (2.1 MB)",
   },
-  "tv-58-4k-uhd": {
+  "tv-55-4k-uhd": {
     sku: "HYLED-58UHD7A",
     grid: [
       { label: "Brand", value: "Hyundai Electronics" },
       { label: "Model", value: "HYLED-58UHD7A" },
-      { label: "Screen size", value: '58"' },
+      { label: "Screen size", value: '55"' },
       { label: "Resolution", value: "4K UHD 3840 × 2160" },
       { label: "Operating system", value: "Android R" },
       { label: "Wi‑Fi", value: "Yes" },
@@ -67,7 +67,7 @@ export const productDetailExtras: Record<string, ProductDetailExtra> = {
     list: [
       { label: "Brand", value: "Hyundai Electronics" },
       { label: "Model", value: "HYLED-58UHD7A" },
-      { label: "Screen size", value: '58"' },
+      { label: "Screen size", value: '55"' },
       { label: "Resolution", value: "4K UHD 3840 × 2160" },
       { label: "Operating system", value: "Android R" },
       { label: "Wi‑Fi", value: "Yes" },
