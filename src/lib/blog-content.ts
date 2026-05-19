@@ -137,7 +137,7 @@ export const blogPosts: BlogPost[] = [
               type: "p",
               text: "Basándonos en las tendencias de ventas en las principales cadenas de retail del país, estos son los tres modelos que lideran el mercado:",
             },
-            { type: "h3", text: "Hyundai 55\" y 58\" UHD 4K" },
+            { type: "h3", text: "Hyundai 55\" UHD 4K" },
             {
               type: "p",
               text: "Es la estrella de la sala, el modelo predilecto para las familias dominicanas. Ofrece el equilibrio perfecto entre tamaño y costo. Resolución 4K real (3840 × 2160 píxeles) y un procesador Quad Core que permite que las aplicaciones carguen instantáneamente, algo vital para ver streaming sin interrupciones.",
@@ -317,7 +317,7 @@ export const blogPosts: BlogPost[] = [
               type: "p",
               text: "Based on sales trends across the country's main retail chains, these are the three models leading the market:",
             },
-            { type: "h3", text: "Hyundai 55\" and 58\" UHD 4K" },
+            { type: "h3", text: "Hyundai 55\" UHD 4K" },
             {
               type: "p",
               text: "The living-room star, the favorite for Dominican families. It strikes a perfect balance between size and price. Real 4K resolution (3840 × 2160 pixels) and a Quad Core processor so apps load instantly — vital for stutter-free streaming.",

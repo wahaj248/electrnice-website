@@ -88,8 +88,8 @@ const EN: Record<string, LocalizedProductDetail> = {
       { label: "Warranty", value: "1 year" },
     ],
   },
-  "tv-58-4k-uhd": {
-    name: 'Smart TV HYUNDAI 58" UHD 4K Google Android TV Black',
+  "tv-55-4k-uhd": {
+    name: 'Smart TV HYUNDAI 55" UHD 4K Google Android TV Black',
     shortDescription:
       "Enjoy the best image quality with the HYLED-58UHD7A model.",
     description:
@@ -101,7 +101,7 @@ const EN: Record<string, LocalizedProductDetail> = {
     specs: [
       { label: "Brand", value: "Hyundai Electronics" },
       { label: "Model", value: "HYLED-58UHD7A" },
-      { label: "Screen size", value: '58"' },
+      { label: "Screen size", value: '55"' },
       { label: "Resolution", value: "3840 × 2160 (4K UHD)" },
       { label: "Operating system", value: "Android R" },
       { label: "Wi‑Fi", value: "Yes" },
@@ -595,8 +595,8 @@ const ES: Record<string, LocalizedProductDetail> = {
       { label: "Garantía", value: "1 año" },
     ],
   },
-  "tv-58-4k-uhd": {
-    name: 'Smart TV HYUNDAI 58" UHD 4K Google Android TV Negro',
+  "tv-55-4k-uhd": {
+    name: 'Smart TV HYUNDAI 55" UHD 4K Google Android TV Negro',
     shortDescription:
       "Disfrutá de la mejor calidad de imagen con el modelo HYLED-58UHD7A.",
     description:
@@ -608,7 +608,7 @@ const ES: Record<string, LocalizedProductDetail> = {
     specs: [
       { label: "Marca", value: "Hyundai Electronics" },
       { label: "Modelo", value: "HYLED-58UHD7A" },
-      { label: "Tamaño de pantalla", value: '58"' },
+      { label: "Tamaño de pantalla", value: '55"' },
       { label: "Resolución", value: "3840 × 2160 (4K UHD)" },
       { label: "Sistema operativo", value: "Android R" },
       { label: "Wi‑Fi", value: "Sí" },

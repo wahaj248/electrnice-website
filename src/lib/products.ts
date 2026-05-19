@@ -89,7 +89,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "tv-58-4k-uhd",
+    id: "tv-55-4k-uhd",
     name: 'Smart TV HYUNDAI 55" UHD 4K Google Android TV Black',
     price: 25500,
     image: "/images/HYLED-58UHD7A-0.jpg",
@@ -99,7 +99,7 @@ export const products: Product[] = [
       "The Hyundai HYLED-58UHD7A combines advanced technology with stunning 4K UHD resolution so you can enjoy every detail. Perfect for your home, it features Wi‑Fi connectivity, an Android operating system, and excellent color reproduction for an immersive viewing experience.",
     category: "TVs",
     catalogFeatures: [
-      '58" 4K UHD · Google Android TV',
+      '55" 4K UHD · Google Android TV',
       "Model HYLED-58UHD7A",
       "Wi‑Fi · 3× HDMI · 2× USB",
       "3840×2160 · Android R",
