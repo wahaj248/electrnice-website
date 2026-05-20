@@ -125,7 +125,12 @@
     "card1Title": "About Company",
     "card2Title": "About Our Products",
     "card3Title": "Catalog",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "card1Body": "We are a company focused on delivering electronics and home appliance solutions for homes, businesses and industry, integrating technology, innovation and quality in every product. We are committed to providing reliable, efficient and functional equipment, backed by service aimed at meeting our customers' needs and adding value to every experience.",
+    "card2Body": "Our products combine technology, innovation and functionality to offer solutions tailored to homes, offices, businesses and industry, with a wide range of electronic equipment and appliances designed to deliver quality, efficiency and comfort in every space, improving everyday experience and performance.",
+    "card3Body": "Browse our catalog of HYUNDAI Smart TVs and air conditioners. View models, technical specifications and options for homes, offices and businesses. Select the equipment you need and contact us for personalized advice and the best offers.",
+    "viewCatalog": "View catalog",
+    "close": "Close"
   },
   "testimonials": {
     "title": "Customer Experiences",
