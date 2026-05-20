@@ -125,7 +125,12 @@
     "card1Title": "Sobre la empresa",
     "card2Title": "Sobre nuestros productos",
     "card3Title": "Catálogo",
-    "learnMore": "Ver más"
+    "learnMore": "Ver más",
+    "card1Body": "Somos una empresa enfocada en ofrecer soluciones en electrónica y electrodomésticos para el hogar, comercios e industrias, integrando tecnología, innovación y calidad en cada producto. Nos comprometemos a brindar equipos confiables, eficientes y funcionales, acompañados de un servicio orientado a satisfacer las necesidades de nuestros clientes y aportar valor en cada experiencia.",
+    "card2Body": "Nuestros productos combinan tecnología, innovación y funcionalidad para ofrecer soluciones adaptadas al hogar, oficinas, comercios e industrias, con una amplia variedad de equipos electrónicos y electrodomésticos diseñados para brindar calidad, eficiencia y comodidad en cada espacio, mejorando la experiencia y el rendimiento en el día a día.",
+    "card3Body": "Explora nuestro catálogo de Smart TV y aires acondicionados HYUNDAI. Consulta modelos, características técnicas y opciones para el hogar, oficinas y comercios. Selecciona los equipos que necesitas y contáctanos para recibir asesoría personalizada y las mejores ofertas.",
+    "viewCatalog": "Ver catálogo",
+    "close": "Cerrar"
   },
   "testimonials": {
     "title": "Experiencias de clientes",

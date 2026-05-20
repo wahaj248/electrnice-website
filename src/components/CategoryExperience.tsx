@@ -64,9 +64,12 @@ export function CategoryExperience() {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/25 transition group-hover:from-black/75" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 p-6 text-center">
                 <span className="text-2xl font-bold text-white drop-shadow-md sm:text-3xl">
                   {t("home.airConditioners")}
+                </span>
+                <span className="inline-flex h-11 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-zinc-900 shadow-sm transition group-hover:bg-zinc-50">
+                  {t("home.seeMore")}
                 </span>
               </div>
             </div>
